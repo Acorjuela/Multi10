@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>REGISTRACIÓN</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="hdr">
+        <div class="logo">
+          <img id="loteria" src="img/logom10-Photoroom.png" alt="">
+        </div>
+      </header>
+      <div class="title" style="text-align: center;">FORMULARIO DE REGISTRACIÓN</div>
+      <div class="content">
+        <form id="uploadForm" action="https://script.google.com/macros/s/AKfycbwhnm0pc7tTfVQp5o-i-HX2ih5DIV0YZfWQ5FTKYHNPftTkWmkTM-Upopa6HsL5PGKYMA/exec" method="POST" enctype="multipart/form-data">
+          <input type="hidden" value="" name="fileContent" id="fileContent">
+          <input type="hidden" value="" name="filename" id="filename">
+          
+          <div class="user-details">
+            <div class="input-box">
+              <label for="nombre" class="form-label">Nombres</label>
+              <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese su nombre completo" required>
+            </div>
+            <div class="input-box">
+              <label for="pais" class="form-label">País</label>
+              <input type="text" id="pais" name="pais" class="form-control" placeholder="Ingrese su lugar de nacimiento" required>
+            </div>
+            <div class="input-box">
+              <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+              <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control" required>
+            </div>
+            <div class="input-box">
+              <label for="whatsApp" class="form-label">WhatsApp</label>
+              <input type="text" id="whatsApp" name="whatsApp" class="form-control" placeholder="Ingrese su whatsApp" required>
+            </div>
+            <div class="input-box">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Ingrese su correo electrónico" required>
+            </div>
+            <div class="input-box">
+              <label for="binance_de_Pay" class="form-label">Binance de Pay</label>
+              <input type="text" id="binance_de_Pay" name="binance_de_Pay" class="form-control" placeholder="Ingrese su número de teléfono" required>
+            </div>
+
+            <div class="input-box">
+              <div class="container2">
+                <div class="folder">
+                  <div class="front-side">
+                    <div class="tip"></div>
+                    <div class="cover"></div>
+                  </div>
+                  <div class="back-side cover"></div>
+                </div>
+                <label  class="custom-file-upload">
+                  <input required id="adjuntar" name="adjuntar" class="title" type="file" accept="image/*" onchange="previewImage()" />
+                  Choose a file
+                </label>
+              </div>
+            </div>
+
+             <!-- Contenedor para la vista previa de la imagen -->
+             <div class="input-box">
+              <label class="form-label">Una captura de pantalla en Binance Pay, por favor.</label>
+              <img id="imagePreview" alt="Vista previa de la imagen">
+            </div>
+          </div>
+          
+          <div class="button" style="width: 100%; text-align: center;">
+            <input type="button" value="ENVIAR DATOS" onclick="UploadFile();" class="btn btn-success">
+          </div>
+          
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="live">
+          <img id="Correct" src="img/ilustracion-render-3d-icono-casilla-verificacion-verde_47987-11888-Photoroom.png" alt="">
+        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalMessage"></div>
+      </div>
+    </div>
+
+
+		<div class="socket">
+			<div class="gel center-gel">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c1 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c2 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c3 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c4 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c5 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c6 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			
+			<div class="gel c7 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			
+			<div class="gel c8 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c9 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c10 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c11 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c12 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c13 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c14 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c15 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c16 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c17 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c18 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c19 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c20 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c21 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c22 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c23 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c24 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c25 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c26 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c28 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c29 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c30 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c31 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c32 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c33 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c34 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c35 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c36 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c37 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			
+		</div>
+	
+    
+    <script>
+       function previewImage() {
+        const fileInput = document.getElementById("adjuntar");
+        const preview = document.getElementById("imagePreview");
+
+        if (fileInput.files && fileInput.files[0]) {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = "block";
+          };
+
+          reader.readAsDataURL(fileInput.files[0]);
+        } else {
+          preview.src = "";
+          preview.style.display = "none";
+        }
+      }
+          
+      function showLoader() {
+        document.querySelector(".socket").style.display = "flex";
+      }
+    
+      function hideLoader() {
+        document.querySelector(".socket").style.display = "none";
+      }
+    
+      function UploadFile() {
+        const reader = new FileReader();
+        const file = document.getElementById("adjuntar").files[0];
+    
+        showLoader(); // Mostrar loader al iniciar
+    
+        reader.onload = function () {
+          document.getElementById("fileContent").value = reader.result;
+          document.getElementById("filename").value = file.name;
+    
+          // Crear una petición manual usando Fetch
+          const formData = new FormData(document.getElementById("uploadForm"));
+          fetch(document.getElementById("uploadForm").action, {
+            method: "POST",
+            body: formData
+          })
+            .then(response => response.json())
+            .then(data => {
+              hideLoader(); // Ocultar loader al finalizar
+              if (data.status === "success") {
+                const details = data.details;
+                const modalMessage = `
+                  <h2>${data.message}</h2>
+                  <p><strong>Nombre:</strong> ${details.nombre}</p>
+                  <p><strong>País:</strong> ${details.pais}</p>
+                  <p><strong>Fecha de Nacimiento:</strong> ${details.fecha_nacimiento}</p>
+                  <p><strong>WhatsApp:</strong> ${details.whatsApp}</p>
+                  <p><strong>Email:</strong> ${details.email}</p>
+                  <p><strong>Binance de Pay:</strong> ${details.binance_de_Pay}</p>
+                  <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
+                `;
+                document.getElementById("modalMessage").innerHTML = modalMessage;
+                document.getElementById("myModal").style.display = "block";
+              } else {
+                Swal.fire("Error", data.message, "error");
+              }
+            })
+            .catch(error => {
+              hideLoader(); // Ocultar loader al finalizar
+              Swal.fire("Error", "Hubo un problema al procesar los datos.", "error");
+              console.error(error);
+            });
+        };
+    
+        reader.readAsDataURL(file);
+      }
+    
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
