@@ -62,14 +62,17 @@ body{
   padding: 5px 30px;
   border-radius: 30px;
 }
-.container .title{
+.container .ml3{
   font-size: 25px;
   font-weight: 500;
   position: relative;
   color: white;
   margin-top: 20px;
+  text-align: center;
 }
-.container .title::before{
+
+
+.container .ml3::before{
   content: "";
   position: absolute;
   left: 0;
@@ -689,3 +692,5 @@ form .user-details .input-box{
   padding: 10px;
   border-radius: 5px;
 }
+
+
