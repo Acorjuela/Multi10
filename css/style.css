@@ -11,10 +11,67 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: #200122;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #000;
 
+}
+/*color clcik */
+i{
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background: #0f0;
+  pointer-events: none;
+  border-radius:50px;
+  animation: animate 2s linear forwards;
+}
+
+@keyframes animate
+{
+  0%{
+      opacity: 1;
+      transform: translate(0, 0);
+  }
+  100%{
+      opacity: 0;
+      transform: translate(var(--x), var(--y));
+  }
+}
+
+.block {
+	position: absolute;
+	border-radius: 20px;
+	background: linear-gradient(0deg, #000, #272727);
+}
+
+.block:before, .block:after {
+	content: '';
+	position: absolute;
+  border-radius: 20px;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.block:after {
+	filter: blur(50px);
 }
 
 .hdr {
@@ -55,10 +112,8 @@ body{
 .container{
   max-width: 1053px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(0px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+
   padding: 5px 30px;
   border-radius: 30px;
 }
@@ -214,346 +269,255 @@ form .user-details .input-box{
   margin-left: 245px;
 }
 
-.socket {
-  display: none; /* Ocultar por defecto */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 10000;
-  justify-content: center;
-  align-items: center;
+/* From Uiverse.io by Nawsome */ 
+.loadingspinner {
+  --square: 26px;
+  --offset: 30px;
+  --duration: 2.4s;
+  --delay: 0.2s;
+  --timing-function: ease-in-out;
+  --in-duration: 0.4s;
+  --in-delay: 0.1s;
+  --in-timing-function: ease-out;
+  width: calc( 3 * var(--offset) + var(--square));
+  height: calc( 2 * var(--offset) + var(--square));
+  padding: 0px;
+  animation-name: loadings;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  display: none;
+  
 }
 
-.hex-brick {
-  background: linear-gradient(135deg, #ff032d, #031bf8);
-  width: 30px;
-  height: 17px;
+
+.loadingspinner div {
+  display: inline-block;
+  background: rgb(255, 251, 2);
+  border: none;
+  border-radius: 2px;
+  width: var(--square);
+  height: var(--square);
   position: absolute;
-  top: 5px;
-  animation-name: fade00;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: fade00;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
+  padding: 0px;
+  margin: 0px;
+  font-size: 6pt;
+  color: black;
 }
 
-.h2 {
-  transform: rotate(60deg);
-  -webkit-transform: rotate(60deg);
+.loadingspinner #square1 {
+  left: calc( 0 * var(--offset) );
+  top: calc( 0 * var(--offset) );
+  animation: square1 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
 }
 
-.h3 {
-  transform: rotate(-60deg);
-  -webkit-transform: rotate(-60deg);
+.loadingspinner #square2 {
+  left: calc( 0 * var(--offset) );
+  top: calc( 1 * var(--offset) );
+  animation: square2 var(--duration) var(--delay) var(--timing-function) infinite,
+              squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
 }
 
-.gel {
-  height: 30px;
-  width: 30px;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.loadingspinner #square3 {
+  left: calc( 1 * var(--offset) );
+  top: calc( 1 * var(--offset) );
+  animation: square3 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
 }
 
-.center-gel {
-  margin-left: -15px;
-  margin-top: -15px;
-  animation-name: pulse00;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: pulse00;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
+.loadingspinner #square4 {
+  left: calc( 2 * var(--offset) );
+  top: calc( 1 * var(--offset) );
+  animation: square4 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
 }
 
-.c1 {
-  margin-left: -47px;
-  margin-top: -15px;
+.loadingspinner #square5 {
+  left: calc( 3 * var(--offset) );
+  top: calc( 1 * var(--offset) );
+  animation: square5 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
 }
 
-.c2 {
-  margin-left: -31px;
-  margin-top: -43px;
-}
-
-.c3 {
-  margin-left: 1px;
-  margin-top: -43px;
-}
-
-.c4 {
-  margin-left: 17px;
-  margin-top: -15px;
-}
-
-.c5 {
-  margin-left: -31px;
-  margin-top: 13px;
-}
-
-.c6 {
-  margin-left: 1px;
-  margin-top: 13px;
-}
-
-.c7 {
-  margin-left: -63px;
-  margin-top: -43px;
-}
-
-.c8 {
-  margin-left: 33px;
-  margin-top: -43px;
-}
-
-.c9 {
-  margin-left: -15px;
-  margin-top: 41px;
-}
-
-.c10 {
-  margin-left: -63px;
-  margin-top: 13px;
-}
-
-.c11 {
-  margin-left: 33px;
-  margin-top: 13px;
-}
-
-.c12 {
-  margin-left: -15px;
-  margin-top: -71px;
-}
-
-.c13 {
-  margin-left: -47px;
-  margin-top: -71px;
-}
-
-.c14 {
-  margin-left: 17px;
-  margin-top: -71px;
-}
-
-.c15 {
-  margin-left: -47px;
-  margin-top: 41px;
-}
-
-.c16 {
-  margin-left: 17px;
-  margin-top: 41px;
-}
-
-.c17 {
-  margin-left: -79px;
-  margin-top: -15px;
-}
-
-.c18 {
-  margin-left: 49px;
-  margin-top: -15px;
-}
-
-.c19 {
-  margin-left: -63px;
-  margin-top: -99px;
-}
-
-.c20 {
-  margin-left: 33px;
-  margin-top: -99px;
-}
-
-.c21 {
-  margin-left: 1px;
-  margin-top: -99px;
-}
-
-.c22 {
-  margin-left: -31px;
-  margin-top: -99px;
-}
-
-.c23 {
-  margin-left: -63px;
-  margin-top: 69px;
-}
-
-.c24 {
-  margin-left: 33px;
-  margin-top: 69px;
-}
-
-.c25 {
-  margin-left: 1px;
-  margin-top: 69px;
-}
-
-.c26 {
-  margin-left: -31px;
-  margin-top: 69px;
-}
-
-.c27 {
-  margin-left: -79px;
-  margin-top: -15px;
-}
-
-.c28 {
-  margin-left: -95px;
-  margin-top: -43px;
-}
-
-.c29 {
-  margin-left: -95px;
-  margin-top: 13px;
-}
-
-.c30 {
-  margin-left: 49px;
-  margin-top: 41px;
-}
-
-.c31 {
-  margin-left: -79px;
-  margin-top: -71px;
-}
-
-.c32 {
-  margin-left: -111px;
-  margin-top: -15px;
-}
-
-.c33 {
-  margin-left: 65px;
-  margin-top: -43px;
-}
-
-.c34 {
-  margin-left: 65px;
-  margin-top: 13px;
-}
-
-.c35 {
-  margin-left: -79px;
-  margin-top: 41px;
-}
-
-.c36 {
-  margin-left: 49px;
-  margin-top: -71px;
-}
-
-.c37 {
-  margin-left: 81px;
-  margin-top: -15px;
-}
-
-.r1 {
-  animation-name: pulse00;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-delay: .2s;
-  -webkit-animation-name: pulse00;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-delay: .2s;
-}
-
-.r2 {
-  animation-name: pulse00;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-delay: .4s;
-  -webkit-animation-name: pulse00;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-delay: .4s;
-}
-
-.r3 {
-  animation-name: pulse00;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-delay: .6s;
-  -webkit-animation-name: pulse00;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-delay: .6s;
-}
-
-.r1 > .hex-brick {
-  animation-name: fade00;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-delay: .2s;
-  -webkit-animation-name: fade00;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-delay: .2s;
-}
-
-.r2 > .hex-brick {
-  animation-name: fade00;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-delay: .4s;
-  -webkit-animation-name: fade00;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-delay: .4s;
-}
-
-.r3 > .hex-brick {
-  animation-name: fade00;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-delay: .6s;
-  -webkit-animation-name: fade00;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-delay: .6s;
-}
-
-@keyframes pulse00 {
+@keyframes square1 {
   0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    left: calc( 0 * var(--offset) );
+    top: calc( 0 * var(--offset) );
   }
 
-  50% {
-    -webkit-transform: scale(0.01);
-    transform: scale(0.01);
+  8.333% {
+    left: calc( 0 * var(--offset) );
+    top: calc( 1 * var(--offset) );
   }
 
   100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    left: calc( 0 * var(--offset) );
+    top: calc( 1 * var(--offset) );
   }
 }
 
-@keyframes fade00 {
+@keyframes square2 {
   0% {
-    background: #ff032d;
+    left: calc( 0 * var(--offset) );
+    top: calc( 1 * var(--offset) );
   }
 
-  50% {
-    background: #031bf8;
+  8.333% {
+    left: calc( 0 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  16.67% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  25.00% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  83.33% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  91.67% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 0 * var(--offset) );
   }
 
   100% {
-    background: #ff032d;
+    left: calc( 0 * var(--offset) );
+    top: calc( 0 * var(--offset) );
   }
 }
 
+@keyframes square3 {
+  0%,100% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  16.67% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  25.00% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  33.33% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  41.67% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  66.67% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  75.00% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  83.33% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  91.67% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+}
+
+@keyframes square4 {
+  0% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  33.33% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  41.67% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  50.00% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  58.33% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  100% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+}
+
+@keyframes square5 {
+  0% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  50.00% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  58.33% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  66.67% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  75.00% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  100% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+}
+
+@keyframes squarefadein {
+  0% {
+    transform: scale(0.75);
+    opacity: 0.0;
+  }
+
+  100% {
+    transform: scale(1.0);
+    opacity: 1.0;
+  }
+}
 
 /* From Uiverse.io by 3bdel3ziz-T */ 
 .container2 {
@@ -692,5 +656,7 @@ form .user-details .input-box{
   padding: 10px;
   border-radius: 5px;
 }
+
+
 
 
