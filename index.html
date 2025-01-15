@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Multi 10</title>
     <link rel="stylesheet" href="css/style.css">
-	<link rel="icon" type="image/jpg" href="img/logom10-Photoroom.png">
+	  <link rel="icon" type="image/jpg" href="img/logom10-Photoroom.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
   </head>
   <body>
+    <div class="block">
     <div class="container">
       <header class="hdr">
         <div class="logo">
@@ -45,7 +46,13 @@
             </div>
             <div class="input-box">
               <label for="binance_de_Pay" class="form-label">Binance de Pay</label>
-              <input type="text" id="binance_de_Pay" name="binance_de_Pay" class="form-control" placeholder="Ingrese su número de Binance de Pay" required>
+              <input type="text" id="binance_de_Pay" name="binance_de_Pay" class="form-control" placeholder="Ingrese su número de teléfono" required>
+            </div>
+
+             <!-- Contenedor para la vista previa de la imagen -->
+             <div class="input-box">
+              <label class="form-label">Una captura de pantalla en Binance Pay, por favor.</label>
+              <img id="imagePreview" alt="Vista previa de la imagen">
             </div>
 
             <div class="input-box">
@@ -63,12 +70,7 @@
                 </label>
               </div>
             </div>
-
-             <!-- Contenedor para la vista previa de la imagen -->
-             <div class="input-box">
-              <label class="form-label">Una captura de pantalla en Binance Pay, por favor.</label>
-              <img id="imagePreview" alt="Vista previa de la imagen">
-            </div>
+            
           </div>
           
           <div class="button" style="width: 100%; text-align: center;">
@@ -78,212 +80,55 @@
         </form>
       </div>
     </div>
-
+</div>
     <!-- Modal -->
     <div id="myModal" class="modal">
       <div class="modal-content">
         <div class="live">
           <img id="Correct" src="img/ilustracion-render-3d-icono-casilla-verificacion-verde_47987-11888-Photoroom.png" alt="">
         </div>
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close" onclick="closeModal('')">&times;</span>
         <div id="modalMessage"></div>
       </div>
     </div>
 
 
-		<div class="socket">
-			<div class="gel center-gel">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c1 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c2 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c3 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c4 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c5 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c6 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			
-			<div class="gel c7 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			
-			<div class="gel c8 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c9 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c10 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c11 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c12 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c13 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c14 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c15 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c16 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c17 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c18 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c19 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c20 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c21 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c22 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c23 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c24 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c25 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c26 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c28 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c29 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c30 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c31 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c32 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c33 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c34 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c35 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c36 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c37 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			
-		</div>
+
+    <div class="loadingspinner">
+      <div id="square1"></div>
+      <div id="square2"></div>
+      <div id="square3"></div>
+      <div id="square4"></div>
+      <div id="square5"></div>
+    </div>
 	
     
     <script>
+         function spark(event){
+            let i = document.createElement('i');
+            i.style.left = (event.pageX) + 'px';
+            i.style.top = (event.pageY) + 'px';
+            // to add random shape
+            i.style.scale = `${Math.random() * 2 + 1}`;
+
+            // randomly set some property. --x and --y is the name of variable
+            // The i.style.setProperty function is used to set CSS custom properties (variables) directly on an element's style object.
+            i.style.setProperty('--x', getRandomTransitionValue());
+            i.style.setProperty('--y', getRandomTransitionValue());
+
+            document.body.appendChild(i);
+
+            setTimeout(() => {
+                document.body.removeChild(i);
+            }, 2000);
+        }
+
+        function getRandomTransitionValue(){
+            return `${Math.random() * 400 - 200}px`;
+        }
+
+        document.addEventListener('mousemove', spark);
+
        function previewImage() {
         const fileInput = document.getElementById("adjuntar");
         const preview = document.getElementById("imagePreview");
@@ -304,11 +149,11 @@
       }
           
       function showLoader() {
-        document.querySelector(".socket").style.display = "flex";
+        document.querySelector(".loadingspinner").style.display = "flex";
       }
     
       function hideLoader() {
-        document.querySelector(".socket").style.display = "none";
+        document.querySelector(".loadingspinner").style.display = "none";
       }
     
       function UploadFile() {
@@ -360,11 +205,12 @@
     
       function closeModal() {
         document.getElementById("myModal").style.display = "none";
+		
       }
+
+      
     </script>
 	<script src="Js/script.js"></script>
   </body>
 </html>
 
-  </body>
-</html>
