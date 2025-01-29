@@ -1,216 +1,256 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Multi 10</title>
-    <link rel="stylesheet" href="css/style.css">
-	  <link rel="icon" type="image/jpg" href="img/logom10-Photoroom.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Multi 10</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/jpg" href="img/logom10-Photoroom.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-  </head>
-  <body>
-    <div class="block">
-    <div class="container">
-      <header class="hdr">
-        <div class="logo">
-          <img id="loteria" src="img/logom10-Photoroom.png" alt="">
-        </div>
-      </header>
-	  <h1 class="ml3">FORMULARIO DE REGISTRACIÓN</h1>
-      <div class="content">
-        <form id="uploadForm" action="https://script.google.com/macros/s/AKfycbx0M5A_PRaBzx5K_K7YGMSViqHa_kE5LUMBw4ZaTmNiBAN90xTMsUWA-eQ-aVx3y3W-qw/exec" method="POST" enctype="multipart/form-data">
-          <input type="hidden" value="" name="fileContent" id="fileContent">
-          <input type="hidden" value="" name="filename" id="filename">
-          
-          <div class="user-details">
-            <div class="input-box">
-              <label for="nombre" class="form-label">Nombres</label>
-              <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese su nombre completo" required>
-            </div>
-            <div class="input-box">
-              <label for="pais" class="form-label">País</label>
-              <input type="text" id="pais" name="pais" class="form-control" placeholder="Ingrese su lugar de nacimiento" required>
-            </div>
-            <div class="input-box">
-              <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
-              <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control" required>
-            </div>
-            <div class="input-box">
-              <label for="whatsApp" class="form-label">WhatsApp</label>
-              <input type="text" id="whatsApp" name="whatsApp" class="form-control" placeholder="Ingrese su whatsApp" required>
-            </div>
-            <div class="input-box">
-              <label for="email" class="form-label">Correo Electrónico</label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="Ingrese su correo electrónico" required>
-            </div>
-            <div class="input-box">
-              <label for="binance_de_Pay" class="form-label">Binance de Pay</label>
-              <input type="text" id="binance_de_Pay" name="binance_de_Pay" class="form-control" placeholder="Ingrese su número de teléfono" required>
-            </div>
+</head>
 
-             <!-- Contenedor para la vista previa de la imagen -->
-             <div class="input-box">
-              <label class="form-label">Una captura de pantalla en Binance Pay, por favor.</label>
-              <img id="imagePreview" alt="Vista previa de la imagen">
-            </div>
+<body>
+	<div class="block">
+		<div class="container">
+			<header class="hdr">
+				<div class="logo">
+					<img id="loteria" src="img/logom10-Photoroom.png" alt="">
+				</div>
+			</header>
+			<h1 class="ml3">FORMULARIO DE REGISTRACIÓN</h1>
+			<div class="content">
+				<form id="uploadForm"
+					action="https://script.google.com/macros/s/AKfycbxUtz4CvlHR1v_-6E8BT82Zkxs3nSIdLOvCJpWn0GfvgdJJ9nBOutl5u4ShKbvhdayi/exec"
+					method="POST" enctype="multipart/form-data">
+					<input type="hidden" value="" name="fileContent" id="fileContent">
+					<input type="hidden" value="" name="filename" id="filename">
 
-            <div class="input-box">
-              <div class="container2">
-                <div class="folder">
-                  <div class="front-side">
-                    <div class="tip"></div>
-                    <div class="cover"></div>
-                  </div>
-                  <div class="back-side cover"></div>
-                </div>
-                <label  class="custom-file-upload">
-                  <input required id="adjuntar" name="adjuntar" class="title" type="file" accept="image/*" onchange="previewImage()" />
-                  Choose a file
-                </label>
-              </div>
-            </div>
-            
-          </div>
-          
-          <div class="button" style="width: 100%; text-align: center;">
-            <input type="button" value="ENVIAR DATOS" onclick="UploadFile();" class="btn btn-success">
-          </div>
-          
-        </form>
-      </div>
-    </div>
-</div>
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <div class="live">
-          <img id="Correct" src="img/ilustracion-render-3d-icono-casilla-verificacion-verde_47987-11888-Photoroom.png" alt="">
-        </div>
-        <span class="close" onclick="closeModal('')">&times;</span>
-        <div id="modalMessage"></div>
-      </div>
-    </div>
+					<div class="user-details">
+						<div class="input-box">
+							<label for="nombre" class="form-label">Nombres</label>
+							<input type="text" id="nombre" name="nombre" class="form-control"
+								placeholder="Ingrese su nombre completo" required>
+						</div>
+						<div class="input-box">
+							<label for="pais" class="form-label">País</label>
+							<input type="text" id="pais" name="pais" class="form-control"
+								placeholder="Ingrese su lugar de nacimiento" required>
+						</div>
+						<div class="input-box">
+							<label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+							<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control"
+								required>
+						</div>
+						<div class="input-box">
+							<label for="whatsApp" class="form-label">WhatsApp</label>
+							<input type="text" id="whatsApp" name="whatsApp" class="form-control"
+								placeholder="Ingrese su whatsApp" required>
+						</div>
+						<div class="input-box">
+							<label for="email" class="form-label">Correo Electrónico</label>
+							<input type="email" id="email" name="email" class="form-control"
+								placeholder="Ingrese su correo electrónico" required>
+						</div>
+
+						<div class="input-box">
+							<label for="colores_responsable">Color de Responsable</label>
+							<select id="colores_responsable" name="colores_responsable" required>
+								<option value="">Seleccione un color</option>
+								<option value="Verde">Verde</option>
+								<option value="Oro">Oro</option>
+								<option value="Rojo">Rojo</option>
+								<option value="Rosado">Rosado</option>
+								<option value="Morado">Morado</option>
+								<option value="Azul">Azul</option>
+								<option value="Marrón">Marrón</option>
+								<option value="Naranja">Naranja</option>
+								<option value="Purpura">Purpura</option>
+								<option value="Salmon">Salmon</option>
+								<option value="Amarillo">Amarillo</option>
+								<option value="Verde oscuro">Verde oscuro</option>
+								<option value="Nergo">Nergo</option>
+								<option value="Café">Café</option>
+								<option value="Gris">Gris</option>
+								<option value="Blanco">Blanco</option>
+								<option value="Azul claro">Azul claro</option>
+								<option value="Crema">Crema</option>
+								<option value="Granate">Granate</option>
+							</select>
+						</div>
+
+						<div class="input-box">
+							<label for="binance_de_Pay" class="form-label">Binance de Pay</label>
+							<input type="text" id="binance_de_Pay" name="binance_de_Pay" class="form-control"
+								placeholder="Ingrese su número de teléfono" required>
+						</div>
+
+						<!-- Contenedor para la vista previa de la imagen -->
+						<div class="input-box">
+							<label class="form-label">Una captura de pantalla en Binance Pay, por favor.</label>
+							<img id="imagePreview" alt="Vista previa de la imagen">
+						</div>
+
+						<div class="input-box">
+							<div class="container2">
+								<div class="folder">
+									<div class="front-side">
+										<div class="tip"></div>
+										<div class="cover"></div>
+									</div>
+									<div class="back-side cover"></div>
+								</div>
+								<label class="custom-file-upload">
+									<input required id="adjuntar" name="adjuntar" class="title" type="file"
+										accept="image/*" onchange="previewImage()" />
+									Choose a file
+								</label>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="button" style="width: 100%; text-align: center;">
+						<input type="button" value="ENVIAR DATOS" onclick="UploadFile();" class="btn btn-success">
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<div class="live">
+				<img id="Correct"
+					src="img/ilustracion-render-3d-icono-casilla-verificacion-verde_47987-11888-Photoroom.png" alt="">
+			</div>
+			<span class="close" onclick="closeModal('')">&times;</span>
+			<div id="modalMessage"></div>
+		</div>
+	</div>
 
 
 
-    <div class="loadingspinner">
-      <div id="square1"></div>
-      <div id="square2"></div>
-      <div id="square3"></div>
-      <div id="square4"></div>
-      <div id="square5"></div>
-    </div>
-	
-    
-    <script>
-         function spark(event){
-            let i = document.createElement('i');
-            i.style.left = (event.pageX) + 'px';
-            i.style.top = (event.pageY) + 'px';
-            // to add random shape
-            i.style.scale = `${Math.random() * 2 + 1}`;
+	<div class="loadingspinner">
+		<div id="square1"></div>
+		<div id="square2"></div>
+		<div id="square3"></div>
+		<div id="square4"></div>
+		<div id="square5"></div>
+	</div>
 
-            // randomly set some property. --x and --y is the name of variable
-            // The i.style.setProperty function is used to set CSS custom properties (variables) directly on an element's style object.
-            i.style.setProperty('--x', getRandomTransitionValue());
-            i.style.setProperty('--y', getRandomTransitionValue());
 
-            document.body.appendChild(i);
+	<script>
+		function spark(event) {
+			let i = document.createElement('i');
+			i.style.left = (event.pageX) + 'px';
+			i.style.top = (event.pageY) + 'px';
+			// to add random shape
+			i.style.scale = `${Math.random() * 2 + 1}`;
 
-            setTimeout(() => {
-                document.body.removeChild(i);
-            }, 2000);
-        }
+			// randomly set some property. --x and --y is the name of variable
+			// The i.style.setProperty function is used to set CSS custom properties (variables) directly on an element's style object.
+			i.style.setProperty('--x', getRandomTransitionValue());
+			i.style.setProperty('--y', getRandomTransitionValue());
 
-        function getRandomTransitionValue(){
-            return `${Math.random() * 400 - 200}px`;
-        }
+			document.body.appendChild(i);
 
-        document.addEventListener('mousemove', spark);
+			setTimeout(() => {
+				document.body.removeChild(i);
+			}, 2000);
+		}
 
-       function previewImage() {
-        const fileInput = document.getElementById("adjuntar");
-        const preview = document.getElementById("imagePreview");
+		function getRandomTransitionValue() {
+			return `${Math.random() * 400 - 200}px`;
+		}
 
-        if (fileInput.files && fileInput.files[0]) {
-          const reader = new FileReader();
+		document.addEventListener('mousemove', spark);
 
-          reader.onload = function (e) {
-            preview.src = e.target.result;
-            preview.style.display = "block";
-          };
+		function previewImage() {
+			const fileInput = document.getElementById("adjuntar");
+			const preview = document.getElementById("imagePreview");
 
-          reader.readAsDataURL(fileInput.files[0]);
-        } else {
-          preview.src = "";
-          preview.style.display = "none";
-        }
-      }
-          
-      function showLoader() {
-        document.querySelector(".loadingspinner").style.display = "flex";
-      }
-    
-      function hideLoader() {
-        document.querySelector(".loadingspinner").style.display = "none";
-      }
-    
-      function UploadFile() {
-        const reader = new FileReader();
-        const file = document.getElementById("adjuntar").files[0];
-    
-        showLoader(); // Mostrar loader al iniciar
-    
-        reader.onload = function () {
-          document.getElementById("fileContent").value = reader.result;
-          document.getElementById("filename").value = file.name;
-    
-          // Crear una petición manual usando Fetch
-          const formData = new FormData(document.getElementById("uploadForm"));
-          fetch(document.getElementById("uploadForm").action, {
-            method: "POST",
-            body: formData
-          })
-            .then(response => response.json())
-            .then(data => {
-              hideLoader(); // Ocultar loader al finalizar
-              if (data.status === "success") {
-                const details = data.details;
-                const modalMessage = `
+			if (fileInput.files && fileInput.files[0]) {
+				const reader = new FileReader();
+
+				reader.onload = function (e) {
+					preview.src = e.target.result;
+					preview.style.display = "block";
+				};
+
+				reader.readAsDataURL(fileInput.files[0]);
+			} else {
+				preview.src = "";
+				preview.style.display = "none";
+			}
+		}
+
+		function showLoader() {
+			document.querySelector(".loadingspinner").style.display = "flex";
+		}
+
+		function hideLoader() {
+			document.querySelector(".loadingspinner").style.display = "none";
+		}
+
+		function UploadFile() {
+			const reader = new FileReader();
+			const file = document.getElementById("adjuntar").files[0];
+
+			showLoader(); // Mostrar loader al iniciar
+
+			reader.onload = function () {
+				document.getElementById("fileContent").value = reader.result;
+				document.getElementById("filename").value = file.name;
+
+				// Crear una petición manual usando Fetch
+				const formData = new FormData(document.getElementById("uploadForm"));
+				fetch(document.getElementById("uploadForm").action, {
+					method: "POST",
+					body: formData
+				})
+					.then(response => response.json())
+					.then(data => {
+						hideLoader(); // Ocultar loader al finalizar
+						if (data.status === "success") {
+							const details = data.details;
+							const modalMessage = `
                   <h2>${data.message}</h2>
                   <p><strong>Nombre:</strong> ${details.nombre}</p>
                   <p><strong>País:</strong> ${details.pais}</p>
                   <p><strong>Fecha de Nacimiento:</strong> ${details.fecha_nacimiento}</p>
                   <p><strong>WhatsApp:</strong> ${details.whatsApp}</p>
                   <p><strong>Email:</strong> ${details.email}</p>
+                  <p><strong>Color de Responsable</strong> ${details.colores_responsable}</p>
                   <p><strong>Binance de Pay:</strong> ${details.binance_de_Pay}</p>
                   <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
                 `;
-                document.getElementById("modalMessage").innerHTML = modalMessage;
-                document.getElementById("myModal").style.display = "block";
-              } else {
-                Swal.fire("Error", data.message, "error");
-              }
-            })
-            .catch(error => {
-              hideLoader(); // Ocultar loader al finalizar
-              Swal.fire("Error", "Hubo un problema al procesar los datos.", "error");
-              console.error(error);
-            });
-        };
-    
-        reader.readAsDataURL(file);
-      }
-    
-      function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-		
-      }
+							document.getElementById("modalMessage").innerHTML = modalMessage;
+							document.getElementById("myModal").style.display = "block";
+						} else {
+							Swal.fire("Error", data.message, "error");
+						}
+					})
+					.catch(error => {
+						hideLoader(); // Ocultar loader al finalizar
+						Swal.fire("Error", "Hubo un problema al procesar los datos.", "error");
+						console.error(error);
+					});
+			};
 
-      
-    </script>
+			reader.readAsDataURL(file);
+		}
+
+		function closeModal() {
+			document.getElementById("myModal").style.display = "none";
+
+		}
+
+
+	</script>
 	<script src="Js/script.js"></script>
-  </body>
-</html>
+</body>
 
+</html>
