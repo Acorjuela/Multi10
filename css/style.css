@@ -214,6 +214,24 @@ form .input-box span.details{
    transition: all 0.3s ease;
    background: linear-gradient(135deg, #ff032d, #031bf8);
  }
+/* Estilo para el botón cuando está deshabilitado */
+button:disabled, input[type="button"]:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7; /* Le damos un poco de transparencia para indicar que está deshabilitado */
+}
+
+/* Estilo para el botón habilitado (con el fondo de gradiente) */
+button, input[type="button"]:enabled {
+    background: linear-gradient(135deg, #ff032d, #031bf8); /* Fondo degradado */
+    cursor: pointer; /* Cursor en forma de mano */
+    color: white; /* Color de texto */
+    transition: background 0.3s ease; /* Efecto de transición para el fondo */
+}
+
+button:hover, input[type="button"]:enabled:hover {
+    background: linear-gradient(135deg, #031bf8, #ff032d); /* Fondo degradado en hover */
+}
  form .button input:hover{
   /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #2b05ff, #0af5af);
