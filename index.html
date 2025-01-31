@@ -143,31 +143,17 @@
 
 
 	<script>
-		function spark(event) {
-			let i = document.createElement('i');
-			i.style.left = (event.pageX) + 'px';
-			i.style.top = (event.pageY) + 'px';
-			// to add random shape
-			i.style.scale = `${Math.random() * 2 + 1}`;
-
-			// randomly set some property. --x and --y is the name of variable
-			// The i.style.setProperty function is used to set CSS custom properties (variables) directly on an element's style object.
-			i.style.setProperty('--x', getRandomTransitionValue());
-			i.style.setProperty('--y', getRandomTransitionValue());
-
-			document.body.appendChild(i);
-
-			setTimeout(() => {
-				document.body.removeChild(i);
-			}, 2000);
+			// Función para mostrar el loader (la animación mientras se envía la información)
+		function showLoader() {
+			document.querySelector(".loadingspinner").style.display = "flex";
 		}
 
-		function getRandomTransitionValue() {
-			return `${Math.random() * 400 - 200}px`;
+		// Función para ocultar el loader cuando termine el proceso
+		function hideLoader() {
+			document.querySelector(".loadingspinner").style.display = "none";
 		}
 
-		document.addEventListener('mousemove', spark);
-
+		// Función para cargar la imagen seleccionada como vista previa
 		function previewImage() {
 			const fileInput = document.getElementById("adjuntar");
 			const preview = document.getElementById("imagePreview");
@@ -187,66 +173,74 @@
 			}
 		}
 
-		function showLoader() {
-			document.querySelector(".loadingspinner").style.display = "flex";
-		}
-
-		function hideLoader() {
-			document.querySelector(".loadingspinner").style.display = "none";
-		}
-
+		// Función para manejar el envío del formulario
 		function UploadFile() {
 			const reader = new FileReader();
 			const file = document.getElementById("adjuntar").files[0];
 
-			showLoader(); // Mostrar loader al iniciar
+			showLoader(); // Mostrar el loader al iniciar el envío
 
+			// Cargar el contenido del archivo
 			reader.onload = function () {
 				document.getElementById("fileContent").value = reader.result;
 				document.getElementById("filename").value = file.name;
 
-				// Crear una petición manual usando Fetch
+				// Crear un objeto FormData con los datos del formulario
 				const formData = new FormData(document.getElementById("uploadForm"));
+
+				// Usar fetch para enviar los datos
 				fetch(document.getElementById("uploadForm").action, {
 					method: "POST",
 					body: formData
 				})
 					.then(response => response.json())
 					.then(data => {
-						hideLoader(); // Ocultar loader al finalizar
+						hideLoader(); // Ocultar el loader cuando se termine
+
 						if (data.status === "success") {
 							const details = data.details;
 							const modalMessage = `
-                  <h2>${data.message}</h2>
-                  <p><strong>Nombre:</strong> ${details.nombre}</p>
-                  <p><strong>País:</strong> ${details.pais}</p>
-                  <p><strong>Fecha de Nacimiento:</strong> ${details.fecha_nacimiento}</p>
-                  <p><strong>WhatsApp:</strong> ${details.whatsApp}</p>
-                  <p><strong>Email:</strong> ${details.email}</p>
-                  <p><strong>Color de Responsable</strong> ${details.colores_responsable}</p>
-                  <p><strong>Binance de Pay:</strong> ${details.binance_de_Pay}</p>
-                  <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
+                    <h2>${data.message}</h2>
+                    <p><strong>Nombre:</strong> ${details.nombre}</p>
+                    <p><strong>País:</strong> ${details.pais}</p>
+                    <p><strong>Fecha de Nacimiento:</strong> ${details.fecha_nacimiento}</p>
+                    <p><strong>WhatsApp:</strong> ${details.whatsApp}</p>
+                    <p><strong>Email:</strong> ${details.email}</p>
+                    <p><strong>Color de Responsable:</strong> ${details.colores_responsable}</p>
+                    <p><strong>Binance de Pay:</strong> ${details.binance_de_Pay}</p>
+                    <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
                 `;
 							document.getElementById("modalMessage").innerHTML = modalMessage;
-							document.getElementById("myModal").style.display = "block";
+							document.getElementById("myModal").style.display = "block"; // Mostrar el modal con los detalles
 						} else {
-							Swal.fire("Error", data.message, "error");
+							Swal.fire("Error", data.message, "error"); // Mostrar alerta de error
 						}
 					})
 					.catch(error => {
-						hideLoader(); // Ocultar loader al finalizar
+						hideLoader(); // Ocultar el loader si hay un error
 						Swal.fire("Error", "Hubo un problema al procesar los datos.", "error");
 						console.error(error);
 					});
 			};
 
+			// Leer el archivo seleccionado
 			reader.readAsDataURL(file);
 		}
 
+		// Función para cerrar el modal
 		function closeModal() {
 			document.getElementById("myModal").style.display = "none";
-
+			document.getElementById("uploadForm").reset(); // Reiniciar el formulario
+			document.getElementById("imagePreview").style.display = "none"; // Asegurarse de que la imagen no esté visible
 		}
+
+		// Cerrar el modal si se hace clic fuera de él
+		window.onclick = function (event) {
+			if (event.target == document.getElementById("myModal")) {
+				closeModal();
+			}
+		}
+
 
 
 	</script>
