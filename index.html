@@ -22,24 +22,24 @@
 			<h1 class="ml3">FORMULARIO DE REGISTRACIÓN</h1>
 			<div class="content">
 				<form id="uploadForm"
-					action="https://script.google.com/macros/s/AKfycbxUtz4CvlHR1v_-6E8BT82Zkxs3nSIdLOvCJpWn0GfvgdJJ9nBOutl5u4ShKbvhdayi/exec"
+					action="https://script.google.com/macros/s/AKfycbwqA3AActfpNBLoPtN1EnhOgVJvNFRZV2N3IZoqSDwFz6wGSKVouNUPH66MMCFQimaI/exec"
 					method="POST" enctype="multipart/form-data">
 					<input type="hidden" value="" name="fileContent" id="fileContent">
 					<input type="hidden" value="" name="filename" id="filename">
 
 					<div class="user-details">
 						<div class="input-box">
-							<label for="nombre" class="form-label">Nombres</label>
+							<label for="nombre" class="form-label">Nomes</label>
 							<input type="text" id="nombre" name="nombre" class="form-control"
-								placeholder="Ingrese su nombre completo" required>
+								placeholder="Ingrese su Nomes completo" required>
 						</div>
 						<div class="input-box">
-							<label for="pais" class="form-label">País</label>
-							<input type="text" id="pais" name="pais" class="form-control"
-								placeholder="Ingrese su lugar de nacimiento" required>
+							<label for="email" class="form-label">E-mail</label>
+							<input type="email" id="email" name="email" class="form-control"
+								placeholder="Ingrese su E-mail" required>
 						</div>
 						<div class="input-box">
-							<label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+							<label for="fecha_nacimiento" class="form-label">Data de nascimento</label>
 							<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control"
 								required>
 						</div>
@@ -49,13 +49,19 @@
 								placeholder="Ingrese su whatsApp" required>
 						</div>
 						<div class="input-box">
-							<label for="email" class="form-label">Correo Electrónico</label>
-							<input type="email" id="email" name="email" class="form-control"
-								placeholder="Ingrese su correo electrónico" required>
+							<label for="usuario" class="form-label">Usuário</label>
+							<input type="text" id="usuario" name="usuario" class="form-control"
+								placeholder="Usuário Cear " required>
+						</div>
+						<div class="input-box">
+							<label for="pais" class="form-label">País</label>
+							<input type="text" id="pais" name="pais" class="form-control"
+								placeholder="Ingrese su lugar de nacimiento" required>
 						</div>
 
+
 						<div class="input-box">
-							<label for="colores_responsable">Color de Responsable</label>
+							<label for="colores_responsable">Cor Responsável</label>
 							<select id="colores_responsable" name="colores_responsable" required>
 								<option value="" disabled selected>Selecione uma cor</option>
 								<option value="Verde">Verde</option>
@@ -80,15 +86,17 @@
 							</select>
 						</div>
 
+
+
 						<div class="input-box">
 							<label for="binance_de_Pay" class="form-label">Binance de Pay</label>
 							<input type="text" id="binance_de_Pay" name="binance_de_Pay" class="form-control"
-								placeholder="Ingrese su número de teléfono" required>
+								placeholder="Ingrese su número de Binance" required>
 						</div>
 
 						<!-- Contenedor para la vista previa de la imagen -->
 						<div class="input-box">
-							<label class="form-label">Una captura de pantalla en Binance Pay, por favor.</label>
+							<label class="form-label">Uma captura de tela do Binance Pay, por favor.</label>
 							<img id="imagePreview" alt="Vista previa de la imagen">
 						</div>
 
@@ -109,10 +117,12 @@
 							</div>
 						</div>
 
+
 					</div>
 
 					<div class="button" style="width: 100%; text-align: center;">
-						<input type="button" id="submitButton" value="ENVIAR DATOS" onclick="UploadFile();" class="btn btn-success">
+						<input type="button" id="submitButton" value="ENVIAR DATOS" onclick="UploadFile();"
+							class="btn btn-success">
 					</div>
 
 				</form>
@@ -250,12 +260,13 @@
 							const details = data.details;
 							const modalMessage = `
                     <h2>${data.message}</h2>
-                    <p><strong>Nombre:</strong> ${details.nombre}</p>
+                    <p><strong>Nomes:</strong> ${details.nombre}</p>
+					<p><strong>E-mail:</strong> ${details.email}</p>
+					<p><strong>Data de nascimento:</strong> ${details.fecha_nacimiento}</p>
+					<p><strong>WhatsApp:</strong> ${details.whatsApp}</p>
+					<p><strong>Usuário:</strong> ${details.usuario}</p>
                     <p><strong>País:</strong> ${details.pais}</p>
-                    <p><strong>Fecha de Nacimiento:</strong> ${details.fecha_nacimiento}</p>
-                    <p><strong>WhatsApp:</strong> ${details.whatsApp}</p>
-                    <p><strong>Email:</strong> ${details.email}</p>
-                    <p><strong>Color de Responsable:</strong> ${details.colores_responsable}</p>
+                    <p><strong>Cor Responsável:</strong> ${details.colores_responsable}</p>
                     <p><strong>Binance de Pay:</strong> ${details.binance_de_Pay}</p>
                     <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
                 `;
