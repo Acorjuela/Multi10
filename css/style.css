@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -14,64 +16,68 @@ body{
   background-color: #000;
 
 }
+
 /*color clcik */
-i{
+i {
   position: fixed;
   width: 7px;
   height: 7px;
   background: #0f0;
   pointer-events: none;
-  border-radius:50px;
+  border-radius: 50px;
   animation: animate 2s linear forwards;
 }
 
-@keyframes animate
-{
-  0%{
-      opacity: 1;
-      transform: translate(0, 0);
+@keyframes animate {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
   }
-  100%{
-      opacity: 0;
-      transform: translate(var(--x), var(--y));
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y));
   }
 }
 
 .block {
-	position: absolute;
-	border-radius: 20px;
-	background: linear-gradient(0deg, #000, #272727);
+  position: absolute;
+  border-radius: 20px;
+  background: linear-gradient(0deg, #000, #272727);
 }
 
-.block:before, .block:after {
-	content: '';
-	position: absolute;
+.block:before,
+.block:after {
+  content: '';
+  position: absolute;
   border-radius: 20px;
-	left: -2px;
-	top: -2px;
-	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
-		#0000ff, #00ff00,#ffff00, #ff0000);
-	background-size: 400%;
-	width: calc(100% + 4px);
-	height: calc(100% + 4px);
-	z-index: -1;
-	animation: steam 20s linear infinite;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+      #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
 }
 
 @keyframes steam {
-	0% {
-		background-position: 0 0;
-	}
-	50% {
-		background-position: 400% 0;
-	}
-	100% {
-		background-position: 0 0;
-	}
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .block:after {
-	filter: blur(50px);
+  filter: blur(50px);
 }
 
 .hdr {
@@ -109,7 +115,8 @@ i{
   margin-left: auto;
   margin-right: auto;
 }
-.container{
+
+.container {
   max-width: 1053px;
   width: 100%;
   border-radius: 20px;
@@ -117,7 +124,8 @@ i{
   padding: 5px 30px;
   border-radius: 30px;
 }
-.container .ml3{
+
+.container .ml3 {
   font-size: 25px;
   font-weight: 500;
   position: relative;
@@ -127,7 +135,7 @@ i{
 }
 
 
-.container .ml3::before{
+.container .ml3::before {
   content: "";
   position: absolute;
   left: 0;
@@ -137,24 +145,28 @@ i{
   border-radius: 5px;
   background: linear-gradient(135deg, #ff032d, #031bf8);
 }
-.content form .user-details{
+
+.content form .user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
-form .user-details .input-box{
+
+form .user-details .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
   color: white;
   font-size: 20px;
 }
-form .input-box span.details{
+
+form .input-box span.details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
-.user-details .input-box input{
+
+.user-details .input-box input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -166,7 +178,7 @@ form .input-box span.details{
   transition: all 0.3s ease;
 }
 
-.user-details .input-box select {
+#colores_responsable {
   height: 45px;
   width: 100%;
   outline: none;
@@ -179,98 +191,120 @@ form .input-box span.details{
 }
 
 .user-details .input-box input:focus,
-.user-details .input-box input:valid{
+.user-details .input-box input:valid {
   border-color: #9b59b6;
 }
- form .gender-details .gender-title{
+
+form .gender-details .gender-title {
   font-size: 20px;
   font-weight: 500;
- }
- form .category{
-   display: flex;
-   width: 80%;
-   margin: 14px 0 ;
-   justify-content: space-between;
- }
- form .category label{
-   display: flex;
-   align-items: center;
-   cursor: pointer;
- }
- form .button{
-   height: 45px;
-   margin: 35px 0
- }
- form .button input{
-   height: 100%;
-   width: 100%;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(135deg, #ff032d, #031bf8);
- }
+}
+
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .button {
+  height: 45px;
+  margin: 35px 0
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ff032d, #031bf8);
+}
+
 /* Estilo para el botón cuando está deshabilitado */
-button:disabled, input[type="button"]:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    opacity: 0.7; /* Le damos un poco de transparencia para indicar que está deshabilitado */
+button:disabled,
+input[type="button"]:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+  /* Le damos un poco de transparencia para indicar que está deshabilitado */
 }
 
 /* Estilo para el botón habilitado (con el fondo de gradiente) */
-button, input[type="button"]:enabled {
-    background: linear-gradient(135deg, #ff032d, #031bf8); /* Fondo degradado */
-    cursor: pointer; /* Cursor en forma de mano */
-    color: white; /* Color de texto */
-    transition: background 0.3s ease; /* Efecto de transición para el fondo */
+button,
+input[type="button"]:enabled {
+  background: linear-gradient(135deg, #ff032d, #031bf8);
+  /* Fondo degradado */
+  cursor: pointer;
+  /* Cursor en forma de mano */
+  color: white;
+  /* Color de texto */
+  transition: background 0.3s ease;
+  /* Efecto de transición para el fondo */
 }
 
-button:hover, input[type="button"]:enabled:hover {
-    background: linear-gradient(135deg, #031bf8, #ff032d); /* Fondo degradado en hover */
+button:hover,
+input[type="button"]:enabled:hover {
+  background: linear-gradient(135deg, #031bf8, #ff032d);
+  /* Fondo degradado en hover */
 }
- form .button input:hover{
+
+form .button input:hover {
   /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #660101, #e91010);
-  }
- @media(max-width: 584px){
- .container{
-  max-width: 100%;
 }
-form .user-details .input-box{
+
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .user-details .input-box {
     margin-bottom: 15px;
     width: 100%;
   }
-  form .category{
+
+  form .category {
     width: 100%;
   }
-  .content form .user-details{
+
+  .content form .user-details {
     max-height: 300px;
     overflow-y: scroll;
   }
-  .user-details::-webkit-scrollbar{
+
+  .user-details::-webkit-scrollbar {
     width: 5px;
   }
-  }
-  @media(max-width: 459px){
-  .container .content .category{
+}
+
+@media(max-width: 459px) {
+  .container .content .category {
     flex-direction: column;
   }
 }
 
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1000; 
-  left: 0; 
-  top: 0; 
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgba(0, 0, 0, 0.4); 
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 
@@ -285,9 +319,9 @@ form .user-details .input-box{
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: .3rem;
   outline: 0;
-  margin: 15% auto; 
+  margin: 15% auto;
   padding: 20px;
-  width: 85%; 
+  width: 85%;
   text-align: center;
 }
 
@@ -300,7 +334,7 @@ form .user-details .input-box{
   margin-left: 245px;
 }
 
-/* From Uiverse.io by Nawsome */ 
+/* From Uiverse.io by Nawsome */
 .loadingspinner {
   --square: 26px;
   --offset: 30px;
@@ -310,8 +344,8 @@ form .user-details .input-box{
   --in-duration: 0.4s;
   --in-delay: 0.1s;
   --in-timing-function: ease-out;
-  width: calc( 3 * var(--offset) + var(--square));
-  height: calc( 2 * var(--offset) + var(--square));
+  width: calc(3 * var(--offset) + var(--square));
+  height: calc(2 * var(--offset) + var(--square));
   padding: 0px;
   animation-name: loadings;
   margin-left: auto;
@@ -320,7 +354,7 @@ form .user-details .input-box{
   margin-bottom: 30px;
   position: relative;
   display: none;
-  
+
 }
 
 
@@ -339,202 +373,204 @@ form .user-details .input-box{
 }
 
 .loadingspinner #square1 {
-  left: calc( 0 * var(--offset) );
-  top: calc( 0 * var(--offset) );
+  left: calc(0 * var(--offset));
+  top: calc(0 * var(--offset));
   animation: square1 var(--duration) var(--delay) var(--timing-function) infinite,
-               squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+    squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
 }
 
 .loadingspinner #square2 {
-  left: calc( 0 * var(--offset) );
-  top: calc( 1 * var(--offset) );
+  left: calc(0 * var(--offset));
+  top: calc(1 * var(--offset));
   animation: square2 var(--duration) var(--delay) var(--timing-function) infinite,
-              squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+    squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
 }
 
 .loadingspinner #square3 {
-  left: calc( 1 * var(--offset) );
-  top: calc( 1 * var(--offset) );
+  left: calc(1 * var(--offset));
+  top: calc(1 * var(--offset));
   animation: square3 var(--duration) var(--delay) var(--timing-function) infinite,
-               squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
+    squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
 }
 
 .loadingspinner #square4 {
-  left: calc( 2 * var(--offset) );
-  top: calc( 1 * var(--offset) );
+  left: calc(2 * var(--offset));
+  top: calc(1 * var(--offset));
   animation: square4 var(--duration) var(--delay) var(--timing-function) infinite,
-               squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
+    squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
 }
 
 .loadingspinner #square5 {
-  left: calc( 3 * var(--offset) );
-  top: calc( 1 * var(--offset) );
+  left: calc(3 * var(--offset));
+  top: calc(1 * var(--offset));
   animation: square5 var(--duration) var(--delay) var(--timing-function) infinite,
-               squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
+    squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
 }
 
 @keyframes square1 {
   0% {
-    left: calc( 0 * var(--offset) );
-    top: calc( 0 * var(--offset) );
+    left: calc(0 * var(--offset));
+    top: calc(0 * var(--offset));
   }
 
   8.333% {
-    left: calc( 0 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(0 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   100% {
-    left: calc( 0 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(0 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 }
 
 @keyframes square2 {
   0% {
-    left: calc( 0 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(0 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   8.333% {
-    left: calc( 0 * var(--offset) );
-    top: calc( 2 * var(--offset) );
+    left: calc(0 * var(--offset));
+    top: calc(2 * var(--offset));
   }
 
   16.67% {
-    left: calc( 1 * var(--offset) );
-    top: calc( 2 * var(--offset) );
+    left: calc(1 * var(--offset));
+    top: calc(2 * var(--offset));
   }
 
   25.00% {
-    left: calc( 1 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   83.33% {
-    left: calc( 1 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   91.67% {
-    left: calc( 1 * var(--offset) );
-    top: calc( 0 * var(--offset) );
+    left: calc(1 * var(--offset));
+    top: calc(0 * var(--offset));
   }
 
   100% {
-    left: calc( 0 * var(--offset) );
-    top: calc( 0 * var(--offset) );
+    left: calc(0 * var(--offset));
+    top: calc(0 * var(--offset));
   }
 }
 
 @keyframes square3 {
-  0%,100% {
-    left: calc( 1 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+
+  0%,
+  100% {
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   16.67% {
-    left: calc( 1 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   25.00% {
-    left: calc( 1 * var(--offset) );
-    top: calc( 0 * var(--offset) );
+    left: calc(1 * var(--offset));
+    top: calc(0 * var(--offset));
   }
 
   33.33% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 0 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(0 * var(--offset));
   }
 
   41.67% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   66.67% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   75.00% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 2 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(2 * var(--offset));
   }
 
   83.33% {
-    left: calc( 1 * var(--offset) );
-    top: calc( 2 * var(--offset) );
+    left: calc(1 * var(--offset));
+    top: calc(2 * var(--offset));
   }
 
   91.67% {
-    left: calc( 1 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 }
 
 @keyframes square4 {
   0% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   33.33% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   41.67% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 2 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(2 * var(--offset));
   }
 
   50.00% {
-    left: calc( 3 * var(--offset) );
-    top: calc( 2 * var(--offset) );
+    left: calc(3 * var(--offset));
+    top: calc(2 * var(--offset));
   }
 
   58.33% {
-    left: calc( 3 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(3 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   100% {
-    left: calc( 3 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(3 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 }
 
 @keyframes square5 {
   0% {
-    left: calc( 3 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(3 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   50.00% {
-    left: calc( 3 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(3 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   58.33% {
-    left: calc( 3 * var(--offset) );
-    top: calc( 0 * var(--offset) );
+    left: calc(3 * var(--offset));
+    top: calc(0 * var(--offset));
   }
 
   66.67% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 0 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(0 * var(--offset));
   }
 
   75.00% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 
   100% {
-    left: calc( 2 * var(--offset) );
-    top: calc( 1 * var(--offset) );
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
   }
 }
 
@@ -550,7 +586,7 @@ form .user-details .input-box{
   }
 }
 
-/* From Uiverse.io by 3bdel3ziz-T */ 
+/* From Uiverse.io by 3bdel3ziz-T */
 .container2 {
   --transition: 350ms;
   --folder-W: 120px;
@@ -606,6 +642,7 @@ form .user-details .input-box{
 .container2:hover .back-side::before {
   transform: rotateX(-5deg) skewX(5deg);
 }
+
 .container2:hover .back-side::after {
   transform: rotateX(-15deg) skewX(12deg);
 }
@@ -674,7 +711,8 @@ form .user-details .input-box{
     transform: translateY(0px);
   }
 }
- /* Estilos adicionales */
+
+/* Estilos adicionales */
 #imagePreview {
   max-width: 32%;
   margin-top: auto;
@@ -688,6 +726,149 @@ form .user-details .input-box{
   border-radius: 5px;
 }
 
+
+
+dialog {
+  width: 650px;
+  padding: 40px 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: auto;
+  overflow: hidden;
+  border: 8px solid #22a6f3;
+  border-radius: 30px;
+  background-color: #FAFAFA;
+  overflow-x: hidden;
+  /* Evitar desplazamiento horizontal */
+  overflow-y: visible;
+  /* Permitir desplazamiento vertical */
+}
+
+dialog::backdrop {
+  background: rgba(35, 234, 241, 0.432);
+}
+
+dialog p {
+  color: #321c3b;
+}
+
+dialog button {
+  box-shadow: 0px 0px 0 #321c3b;
+}
+
+dialog button:hover {
+  box-shadow: 8px 8px 0 #321c3b;
+}
+
+.modal1-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-buttons .confirm {
+  background: linear-gradient(135deg, #03ffff, #0313f8);
+  color: #fff;
+  height: 3.2em;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.modal-buttons .cancel {
+  background: #f01010d8;
+  padding: 10px 20px;
+  height: 3.2em;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #321c3b;
+  padding: -3px;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+ul {
+  padding: 4%;
+}
+
+ul li {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.subscribe {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.subscribe input {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  width: 280px;
+  font-size: 1em;
+  outline: none;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.subscribe input:focus {
+  border-color: #00c853;
+  background-color: #e9ffe8;
+}
+
+.subscribe input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+.subscribe button,
+input[type="button"]:enabled {
+  background: linear-gradient(135deg, #ff032d, #031bf8);
+  height: 100%;
+  width: 20%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ff032d, #031bf8);
+}
+
+
+.subscribe button:hover {
+  background: linear-gradient(135deg, #03e2ff, #031bf8);
+
+}
 
 
 
