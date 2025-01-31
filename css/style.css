@@ -807,6 +807,11 @@ h3 {
 
 ul {
   padding: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
 }
 
 ul li {
@@ -878,6 +883,42 @@ input[type="button"]:enabled {
     width: 52%;
   }
 }
+/* Incluye tu código existente */
+@media (max-width: 768px) {
 
+  dialog h3,
+  ul li {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-buttons .confirm {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .modal-buttons .cancel {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+/* Galaxy Z Fold 5 (pantalla externa) */
+@media screen and (max-width: 904px) {
+  dialog {
+    max-width: 88%;
+    padding: 20px 30px;
+  }
+
+  h3,
+  ul li {
+    font-size: 1rem;
+  }
+}
 
 
