@@ -112,7 +112,7 @@
 					</div>
 
 					<div class="button" style="width: 100%; text-align: center;">
-						<input type="button" value="ENVIAR DATOS" onclick="UploadFile();" class="btn btn-success">
+						<input type="button" id="submitButton" value="ENVIAR DATOS" onclick="UploadFile();" class="btn btn-success">
 					</div>
 
 				</form>
@@ -143,7 +143,56 @@
 
 
 	<script>
-			// Función para mostrar el loader (la animación mientras se envía la información)
+		// Función para verificar si todos los campos obligatorios están llenos
+		function checkFormCompletion() {
+			const requiredFields = document.querySelectorAll("input[required], select[required]");
+			let allFilled = true;
+
+			requiredFields.forEach(field => {
+				if (!field.value) {
+					allFilled = false; // Si algún campo está vacío, el formulario no está completo
+				}
+			});
+
+			const submitButton = document.getElementById("submitButton");
+			submitButton.disabled = !allFilled; // Habilita o deshabilita el botón
+		}
+
+		// Agregar un evento que se ejecute cada vez que el usuario cambie un campo
+		document.querySelectorAll("input[required], select[required]").forEach(input => {
+			input.addEventListener("input", checkFormCompletion);
+		});
+
+		// Llamar a la función al cargar la página
+		window.onload = checkFormCompletion;
+
+		// Función para enviar el formulario (simulación)
+		function UploadFile() {
+			// Mostrar mensaje de carga mientras se procesa
+			Swal.fire({
+				title: 'Enviando...',
+				text: 'Por favor espere...',
+				didOpen: () => {
+					Swal.showLoading()
+				}
+			});
+
+			// Simular un retraso (en un caso real, aquí iría la lógica de envío del formulario)
+			setTimeout(() => {
+				Swal.fire({
+					title: '¡Registro Exitoso!',
+					text: 'Tus datos fueron registrados correctamente.',
+					icon: 'success',
+					confirmButtonText: 'Cerrar'
+				}).then(() => {
+					// Reiniciar el formulario después del mensaje de éxito
+					document.getElementById("uploadForm").reset();
+					document.getElementById("submitButton").disabled = true; // Deshabilitar el botón nuevamente
+				});
+			}, 2000); // Simular un retraso de 2 segundos
+		}
+
+		// Función para mostrar el loader (la animación mientras se envía la información)
 		function showLoader() {
 			document.querySelector(".loadingspinner").style.display = "flex";
 		}
@@ -232,6 +281,7 @@
 			document.getElementById("myModal").style.display = "none";
 			document.getElementById("uploadForm").reset(); // Reiniciar el formulario
 			document.getElementById("imagePreview").style.display = "none"; // Asegurarse de que la imagen no esté visible
+			document.getElementById("submitButton").disabled = true; // Deshabilitar el botón
 		}
 
 		// Cerrar el modal si se hace clic fuera de él
@@ -240,7 +290,6 @@
 				closeModal();
 			}
 		}
-
 
 
 	</script>
