@@ -871,4 +871,13 @@ input[type="button"]:enabled {
 }
 
 
+@media(max-width: 459px) {
+
+  .subscribe button,
+  input[type="button"]:enabled {
+    width: 52%;
+  }
+}
+
+
 
