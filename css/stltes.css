@@ -866,3 +866,11 @@ input[type="button"]:enabled {
   background: linear-gradient(135deg, #ff0318, #031bf8);
 
 }
+
+@media(max-width: 459px) {
+
+  .subscribe button,
+  input[type="button"]:enabled {
+    width: 52%;
+  }
+}
