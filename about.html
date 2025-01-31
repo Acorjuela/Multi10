@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Multi 10</title>
+  <link rel="stylesheet" href="css/abuy.css">
+  <link rel="icon" type="image/jpg" href="img/logom10-Photoroom.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+
+<body>
+  <div class="block">
+    <div class="container">
+      <header class="hdr">
+        <div class="logo">
+          <img id="loteria" src="img/logom10-Photoroom.png" alt="">
+        </div>
+
+      </header>
+      <h1 class="ml3">FORMULARIO DE REGISTRACIÓN</h1>
+
+      <div class="content">
+        <div class="subscribe">
+          <button onclick="window.modal1.showModal();">Si tienes pay </button>
+        </div>
+        <form id="uploadForm"
+          action="https://script.google.com/macros/s/AKfycbyvgnGimUMKexWpx-H5nRxF1E66nSssR41uw-DEnbISgh-3kQjrQM9YxMbwrdNGtgzX/exec"
+          method="POST" enctype="multipart/form-data">
+          <input type="hidden" value="" name="fileContent" id="fileContent">
+          <input type="hidden" value="" name="filename" id="filename">
+
+          <div class="user-details">
+            <div class="input-box">
+              <label for="nombre" class="form-label">Nomes</label>
+              <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese su Nomes completo"
+                required>
+            </div>
+            <div class="input-box">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Ingrese su E-mail" required>
+            </div>
+            <div class="input-box">
+              <label for="fecha_nacimiento" class="form-label">Data de nascimento</label>
+              <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control" required>
+            </div>
+            <div class="input-box">
+              <label for="whatsApp" class="form-label">WhatsApp</label>
+              <input type="text" id="whatsApp" name="whatsApp" class="form-control" placeholder="Ingrese su whatsApp"
+                required>
+            </div>
+            <div class="input-box">
+              <label for="usuario" class="form-label">Usuário</label>
+              <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuário Cear " required>
+            </div>
+            <div class="input-box">
+              <label for="pais" class="form-label">País</label>
+              <input type="text" id="pais" name="pais" class="form-control" placeholder="Ingrese su lugar de nacimiento"
+                required>
+            </div>
+
+
+            <div class="input-box">
+              <label for="colores_responsable">Cor Responsável</label>
+              <select id="colores_responsable" name="colores_responsable" required>
+                <option value="" disabled selected>Selecione uma cor</option>
+                <option value="Verde">Verde</option>
+                <option value="Ouro">Ouro</option>
+                <option value="Vermelho">Vermelho</option>
+                <option value="Rosa">Rosa</option>
+                <option value="Roxo">Roxo</option>
+                <option value="Azul">Azul</option>
+                <option value="Marrom">Marrom</option>
+                <option value="Laranja">Laranja</option>
+                <option value="Púrpura">Púrpura</option>
+                <option value="Salmão">Salmão</option>
+                <option value="Amarelo">Amarelo</option>
+                <option value="Verde escuro">Verde escuro</option>
+                <option value="Preto">Preto</option>
+                <option value="Café">Café</option>
+                <option value="Cinza">Cinza</option>
+                <option value="Branco">Branco</option>
+                <option value="Azul claro">Azul claro</option>
+                <option value="Creme">Creme</option>
+                <option value="Granada">Granada</option>
+              </select>
+            </div>
+
+
+            <!-- Contenedor para la vista previa de la imagen -->
+            <div class="input-box">
+              <label class="form-label">Foto 3x4</label>
+              <img id="imagePreview" alt="Vista previa de la imagen">
+            </div>
+
+            <div class="input-box">
+              <div class="container2">
+                <div class="folder">
+                  <div class="front-side">
+                    <div class="tip"></div>
+                    <div class="cover"></div>
+                  </div>
+                  <div class="back-side cover"></div>
+                </div>
+                <label class="custom-file-upload">
+                  <input required id="adjuntar" name="adjuntar" class="title" type="file" accept="image/*"
+                    onchange="previewImage()" />
+                  Choose a file
+                </label>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="button" style="width: 100%; text-align: center;">
+            <input type="button" id="submitButton" value="ENVIAR DATOS" onclick="UploadFile();" class="btn btn-success">
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="live">
+        <img id="Correct" src="img/ilustracion-render-3d-icono-casilla-verificacion-verde_47987-11888-Photoroom.png"
+          alt="">
+      </div>
+      <span class="close" onclick="closeModal('')">&times;</span>
+      <div id="modalMessage"></div>
+    </div>
+  </div>
+
+  <dialog id="modal1" class="modal1">
+    <h3>¡Regras dos Administradores do Grupo!</h3>
+    <p> Se você tem uma captura de tela do Binance Pay ao iniciar:</p>
+    <ul>
+      <li>1. Comunicação clara e respeitosa.</li>
+      <li>2. Respeito pelos outros.</li>
+      <li>3. Proibido insultar ou ofender.</li>
+      <li>4. Feedback construtivo.</li>
+      <li>5. Ajuda no processo para obter uma captura de tela do Binance Pay.</li>
+    </ul>
+    <h3>Notas:</h3>
+    <p>Muito obrigado! Desejo a todos um excelente dia, cheio de energia e fluidez.
+      Vamos continuar avançando juntos! 🌟 Bom dia!</p>
+    <div class="modal-buttons">
+      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='index.html'">Iniciar
+        Aceptar</button>
+      <button class="cancel" type="button" id="cancelBtn" onclick="document.location='about.html'">Cancelar</button>
+    </div>
+    </form>
+  </dialog>
+
+
+
+  <div class="loadingspinner">
+    <div id="square1"></div>
+    <div id="square2"></div>
+    <div id="square3"></div>
+    <div id="square4"></div>
+    <div id="square5"></div>
+  </div>
+
+
+  <script>
+    // Función para verificar si todos los campos obligatorios están llenos
+    function checkFormCompletion() {
+      const requiredFields = document.querySelectorAll("input[required], select[required]");
+      let allFilled = true;
+
+      requiredFields.forEach(field => {
+        if (!field.value) {
+          allFilled = false; // Si algún campo está vacío, el formulario no está completo
+        }
+      });
+
+      const submitButton = document.getElementById("submitButton");
+      submitButton.disabled = !allFilled; // Habilita o deshabilita el botón
+    }
+
+    // Agregar un evento que se ejecute cada vez que el usuario cambie un campo
+    document.querySelectorAll("input[required], select[required]").forEach(input => {
+      input.addEventListener("input", checkFormCompletion);
+    });
+
+    // Llamar a la función al cargar la página
+    window.onload = checkFormCompletion;
+
+    // Función para enviar el formulario (simulación)
+    function UploadFile() {
+      // Mostrar mensaje de carga mientras se procesa
+      Swal.fire({
+        title: 'Enviando...',
+        text: 'Por favor espere...',
+        didOpen: () => {
+          Swal.showLoading()
+        }
+      });
+
+      // Simular un retraso (en un caso real, aquí iría la lógica de envío del formulario)
+      setTimeout(() => {
+        Swal.fire({
+          title: '¡Registro Exitoso!',
+          text: 'Tus datos fueron registrados correctamente.',
+          icon: 'success',
+          confirmButtonText: 'Cerrar'
+        }).then(() => {
+          // Reiniciar el formulario después del mensaje de éxito
+          document.getElementById("uploadForm").reset();
+          document.getElementById("submitButton").disabled = true; // Deshabilitar el botón nuevamente
+        });
+      }, 2000); // Simular un retraso de 2 segundos
+    }
+
+    // Función para mostrar el loader (la animación mientras se envía la información)
+    function showLoader() {
+      document.querySelector(".loadingspinner").style.display = "flex";
+    }
+
+    // Función para ocultar el loader cuando termine el proceso
+    function hideLoader() {
+      document.querySelector(".loadingspinner").style.display = "none";
+    }
+
+    // Función para cargar la imagen seleccionada como vista previa
+    function previewImage() {
+      const fileInput = document.getElementById("adjuntar");
+      const preview = document.getElementById("imagePreview");
+
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          preview.style.display = "block";
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+      } else {
+        preview.src = "";
+        preview.style.display = "none";
+      }
+    }
+
+    // Función para manejar el envío del formulario
+    function UploadFile() {
+      const reader = new FileReader();
+      const file = document.getElementById("adjuntar").files[0];
+
+      showLoader(); // Mostrar el loader al iniciar el envío
+
+      // Cargar el contenido del archivo
+      reader.onload = function () {
+        document.getElementById("fileContent").value = reader.result;
+        document.getElementById("filename").value = file.name;
+
+        // Crear un objeto FormData con los datos del formulario
+        const formData = new FormData(document.getElementById("uploadForm"));
+
+        // Usar fetch para enviar los datos
+        fetch(document.getElementById("uploadForm").action, {
+          method: "POST",
+          body: formData
+        })
+          .then(response => response.json())
+          .then(data => {
+            hideLoader(); // Ocultar el loader cuando se termine
+
+            if (data.status === "success") {
+              const details = data.details;
+              const modalMessage = `
+                    <h2>${data.message}</h2>
+                    <p><strong>Nomes:</strong> ${details.nombre}</p>
+					<p><strong>E-mail:</strong> ${details.email}</p>
+					<p><strong>Data de nascimento:</strong> ${details.fecha_nacimiento}</p>
+					<p><strong>WhatsApp:</strong> ${details.whatsApp}</p>
+					<p><strong>Usuário:</strong> ${details.usuario}</p>
+                    <p><strong>País:</strong> ${details.pais}</p>
+                    <p><strong>Cor Responsável:</strong> ${details.colores_responsable}</p>
+                    <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
+                `;
+              document.getElementById("modalMessage").innerHTML = modalMessage;
+              document.getElementById("myModal").style.display = "block"; // Mostrar el modal con los detalles
+            } else {
+              Swal.fire("Error", data.message, "error"); // Mostrar alerta de error
+            }
+          })
+          .catch(error => {
+            hideLoader(); // Ocultar el loader si hay un error
+            Swal.fire("Error", "Hubo un problema al procesar los datos.", "error");
+            console.error(error);
+          });
+      };
+
+      // Leer el archivo seleccionado
+      reader.readAsDataURL(file);
+    }
+
+    // Función para cerrar el modal
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+      document.getElementById("uploadForm").reset(); // Reiniciar el formulario
+      document.getElementById("imagePreview").style.display = "none"; // Asegurarse de que la imagen no esté visible
+      document.getElementById("submitButton").disabled = true; // Deshabilitar el botón
+    }
+
+    // Cerrar el modal si se hace clic fuera de él
+    window.onclick = function (event) {
+      if (event.target == document.getElementById("myModal")) {
+        closeModal();
+      }
+    }
+
+
+
+  </script>
+  <script src="Js/script.js"></script>
+</body>
+
+</html>
