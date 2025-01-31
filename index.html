@@ -18,9 +18,14 @@
 				<div class="logo">
 					<img id="loteria" src="img/logom10-Photoroom.png" alt="">
 				</div>
+
 			</header>
 			<h1 class="ml3">FORMULARIO DE REGISTRACIÓN</h1>
+
 			<div class="content">
+				<div class="subscribe">
+					<button onclick="window.modal1.showModal();">No tienes pay </button>
+				</div>
 				<form id="uploadForm"
 					action="https://script.google.com/macros/s/AKfycbwqA3AActfpNBLoPtN1EnhOgVJvNFRZV2N3IZoqSDwFz6wGSKVouNUPH66MMCFQimaI/exec"
 					method="POST" enctype="multipart/form-data">
@@ -141,6 +146,28 @@
 		</div>
 	</div>
 
+
+	<dialog id="modal1" class="modal1">
+		<h3>¡Regras dos Administradores do Grupo!</h3>
+		<p> Se você não tem uma captura de tela do Binance Pay:</p>
+		<ul>
+			<li>1. Comunicação clara e respeitosa.</li>
+			<li>2. Respeito pelos outros.</li>
+			<li>3. Proibido insultar ou ofender.</li>
+			<li>4. Feedback construtivo.</li>
+			<li>5. Ajuda no processo para obter uma captura de tela do Binance Pay.</li>
+		</ul>
+		<h3>Notas:</h3>
+		<p>Muito obrigado! Desejo a todos um excelente dia, cheio de energia e fluidez.
+			Vamos continuar avançando juntos! 🌟 Bom dia!</p>
+		<div class="modal-buttons">
+			<button class="confirm" type="submit" id="openModalButton"
+				onclick="document.location='about.html'">Aceptar</button>
+			<button class="cancel" type="button" id="cancelBtn"
+				onclick="document.location='index.html'">Cancelar</button>
+		</div>
+		</form>
+	</dialog>
 
 
 	<div class="loadingspinner">
@@ -305,6 +332,9 @@
 
 	</script>
 	<script src="Js/script.js"></script>
+</body>
+
+</html>
 </body>
 
 </html>
