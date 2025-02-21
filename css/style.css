@@ -307,36 +307,50 @@ form .button input:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-
-
 .modal-content {
-  background-image: url('../img/ramixvalen@gmail.com.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;  
-  background-size: cover;
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   pointer-events: auto;
   background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: .3rem;
   outline: 0;
   margin: 15% auto;
   padding: 20px;
   width: 85%;
+  max-width: 500px;
   text-align: center;
 }
 
+#facu {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.live {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#Correct {
+  width: 80px; /* Ajusta el tamaño */
+  height: auto;
+}
 
 .close {
   color: #0501ff;
-  float: right;
+  position: absolute;
+  top: 10px;
+  right: 15px;
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
-  margin-left: 245px;
 }
 
 /* From Uiverse.io by Nawsome */
