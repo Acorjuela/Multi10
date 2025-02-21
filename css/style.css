@@ -310,6 +310,10 @@ form .button input:hover {
 
 
 .modal-content {
+  background-image: url('img/multi.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -324,6 +328,7 @@ form .button input:hover {
   width: 85%;
   text-align: center;
 }
+
 
 .close {
   color: #0501ff;
