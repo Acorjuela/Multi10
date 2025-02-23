@@ -342,7 +342,7 @@ form .button input:hover {
 
 #modalMessage {
   position: absolute;
-  background-color: #000000;
+  color: #000000;
   top: 222px;
   left: 50%;
   transform: translateX(-50%);
