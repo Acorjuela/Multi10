@@ -89,9 +89,9 @@
             </div>
 
             <div class="input-box">
-              <label for="pagar">Pagar en dólares</label>
+              <label for="pagar">Pagar em dólares</label>
               <select id="pagar" name="pagar" required>
-                <option value="" disabled selected>Seleccione un monto</option>
+                <option value="" disabled selected>Selecione um valor</option>
                 <option value="10 USD">10 USD</option>
                 <option value="50 USD">50 USD</option>
                 <option value="100 USD">100 USD</option>
@@ -400,7 +400,7 @@
 					<p><strong>Usuário:</strong> ${details.usuario}</p>
                     <p><strong>País:</strong> ${details.pais}</p>
                     <p><strong>Cor Responsável:</strong> ${details.colores_responsable}</p>
-                    <p><strong>Pagar en dólares:</strong> ${details.pagar}</p>
+                    <p><strong>Pagar em dólares:</strong> ${details.pagar}</p>
                     <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
                 `;
               document.getElementById("modalMessage").innerHTML = modalMessage;
