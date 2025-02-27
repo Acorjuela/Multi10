@@ -20,14 +20,14 @@
         </div>
 
       </header>
-      <h1 class="ml3">FORMULARIO DE REGISTRACIÓN</h1>
+      <h1 class="ml3">FORMULARIO DE REGISTRACIÓN 50 USD</h1>
 
       <div class="content">
         <div class="subscribe">
-          <button onclick="window.modal1.showModal();">Si tienes pay </button>
+          <button onclick="window.modal1.showModal();">Pagar em dólares </button>
         </div>
         <form id="uploadForm"
-          action="https://script.google.com/macros/s/AKfycbxMYSwbKkbCOJkEKq-DadOqoYPKKyn6u4u7GcMKUAQZzvsqow506cwD7M0UG4MhbZSI/exec"
+          action="https://script.google.com/macros/s/AKfycbyn9OSvXjJYnET1zGbkXKkfqB6waQ30e0NSp4rxulSiep-AE99LHVIPhjFEU8QlkSiz/exec"
           method="POST" enctype="multipart/form-data">
           <input type="hidden" value="" name="fileContent" id="fileContent">
           <input type="hidden" value="" name="filename" id="filename">
@@ -92,12 +92,15 @@
               <label for="pagar">Pagar em dólares</label>
               <select id="pagar" name="pagar" required>
                 <option value="" disabled selected>Selecione um valor</option>
-                <option value="10 USD">10 USD</option>
                 <option value="50 USD">50 USD</option>
-                <option value="100 USD">100 USD</option>
               </select>
             </div>
 
+            <div class="input-box">
+              <label for="binance_de_Pay" class="form-label">Binance de Pay</label>
+              <input type="text" id="binance_de_Pay" name="binance_de_Pay" class="form-control"
+                placeholder="Ingrese su número de Binance" required>
+            </div>
 
             <!-- Contenedor para la vista previa de la imagen -->
             <div class="input-box">
@@ -160,8 +163,12 @@
     <p>Muito obrigado! Desejo a todos um excelente dia, cheio de energia e fluidez.
       Vamos continuar avançando juntos! 🌟 Bom dia!</p>
     <div class="modal-buttons">
-      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='index.html'">Iniciar
-        Aceptar</button>
+      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='index.html'">10 USD
+      </button>
+      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='about.html'">50 USD
+      </button>
+      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='main.html'">100 USD
+      </button>
       <button class="cancel" type="button" id="cancelBtn" onclick="document.location='about.html'">Cancelar</button>
     </div>
     </form>
@@ -401,6 +408,7 @@
                     <p><strong>País:</strong> ${details.pais}</p>
                     <p><strong>Cor Responsável:</strong> ${details.colores_responsable}</p>
                     <p><strong>Pagar em dólares:</strong> ${details.pagar}</p>
+                    <p><strong>Binance de Pay:</strong> ${details.binance_de_Pay}</p>
                     <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
                 `;
               document.getElementById("modalMessage").innerHTML = modalMessage;
