@@ -27,7 +27,7 @@
           <button onclick="window.modal1.showModal();">Si tienes pay </button>
         </div>
         <form id="uploadForm"
-          action="https://script.google.com/macros/s/AKfycbyvgnGimUMKexWpx-H5nRxF1E66nSssR41uw-DEnbISgh-3kQjrQM9YxMbwrdNGtgzX/exec"
+          action="https://script.google.com/macros/s/AKfycbxMYSwbKkbCOJkEKq-DadOqoYPKKyn6u4u7GcMKUAQZzvsqow506cwD7M0UG4MhbZSI/exec"
           method="POST" enctype="multipart/form-data">
           <input type="hidden" value="" name="fileContent" id="fileContent">
           <input type="hidden" value="" name="filename" id="filename">
@@ -88,6 +88,16 @@
               </select>
             </div>
 
+            <div class="input-box">
+              <label for="pagar">Pagar en dólares</label>
+              <select id="pagar" name="pagar" required>
+                <option value="" disabled selected>Pagar</option>
+                <option value="10 USD">10 USD</option>
+                <option value="50 USD">50 USD</option>
+                <option value="100 USD">100 USD</option>
+              </select>
+            </div>
+
 
             <!-- Contenedor para la vista previa de la imagen -->
             <div class="input-box">
@@ -123,18 +133,18 @@
       </div>
     </div>
   </div>
- <!-- Modal -->
-	<div id="myModal" class="modal">
-		<div class="modal-content">
-			<img id="facu" src="img/mut100.png" alt="">
-			<div class="live">
-				<img id="Correct" src="img/aprobar.png" alt="">
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <img id="facu" src="img/mut100.png" alt="">
+      <div class="live">
+        <img id="Correct" src="img/aprobar.png" alt="">
 
-			</div>
-			<span class="close" onclick="closeModal('')">&times;</span>
-			<div id="modalMessage"></div>
-		</div>
-	</div>
+      </div>
+      <span class="close" onclick="closeModal('')">&times;</span>
+      <div id="modalMessage"></div>
+    </div>
+  </div>
 
   <dialog id="modal1" class="modal1">
     <h3>¡Regras dos Administradores do Grupo!</h3>
@@ -390,6 +400,7 @@
 					<p><strong>Usuário:</strong> ${details.usuario}</p>
                     <p><strong>País:</strong> ${details.pais}</p>
                     <p><strong>Cor Responsável:</strong> ${details.colores_responsable}</p>
+                    <p><strong>Pagar en dólares:</strong> ${details.pagar}</p>
                     <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
                 `;
               document.getElementById("modalMessage").innerHTML = modalMessage;
