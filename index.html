@@ -27,7 +27,7 @@
 					<button onclick="window.modal1.showModal();">Pagar em dólares  </button>
 				</div>
 				<form id="uploadForm"
-					action="https://script.google.com/macros/s/AKfycbwTMPBNvu40Zsr7mIIciJ_xPoPcWSpUK3TqZ0jVM-SKEWw7alge9un51UJg1_-8bjpG/exec"
+					action="https://script.google.com/macros/s/AKfycbwQ9PJTFydM0HHhgw4_xXHflkVIWqDWcRVMohBKvVzKcnLlnVek6g_YGv_kjXn-0w/exec"
 					method="POST" enctype="multipart/form-data">
 					<input type="hidden" value="" name="fileContent" id="fileContent">
 					<input type="hidden" value="" name="filename" id="filename">
@@ -91,7 +91,13 @@
 							</select>
 						</div>
 
-
+						<div class="input-box">
+							<label for="pagar">Pagar em dólares</label>
+							<select id="pagar" name="pagar" required>
+							  <option value="" disabled selected>Selecione um valor</option>
+							  <option value="10 USD">10 USD</option>
+							</select>
+						  </div>
 
 						<div class="input-box">
 							<label for="binance_de_Pay" class="form-label">Binance de Pay</label>
@@ -299,6 +305,7 @@
 					<p><strong>Usuário:</strong> ${details.usuario}</p>
                     <p><strong>País:</strong> ${details.pais}</p>
                     <p><strong>Cor Responsável:</strong> ${details.colores_responsable}</p>
+					<p><strong>Pagar em dólares:</strong> ${details.pagar}</p>
                     <p><strong>Binance de Pay:</strong> ${details.binance_de_Pay}</p>
                     <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
                 `;
@@ -341,5 +348,7 @@
 
 </html>
 </body>
+
+</html>
 
 </html>
