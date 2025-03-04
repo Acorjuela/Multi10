@@ -25,9 +25,10 @@
       <div class="content">
         <div class="subscribe">
           <button onclick="window.modal1.showModal();">Pagar em dólares </button>
+          <button class="cancel" type="button" id="cancelBtn" onclick="document.location='index.html'">Cancelar</button>
         </div>
         <form id="uploadForm"
-          action="https://script.google.com/macros/s/AKfycbx3JsiSZ6IDpXyF0DBP0kJipOorfudIeuvbbx_eFdJUwXSES9GvTerZAv2uAYNjMl1D/exec"
+          action="https://script.google.com/macros/s/AKfycbw37yD4WKoi7WPko0XitTiGTk1GB5kpG2ZWprXEPInvssC-FdpgKapyOS7HfCZJk5gf/exec"
           method="POST" enctype="multipart/form-data">
           <input type="hidden" value="" name="fileContent" id="fileContent">
           <input type="hidden" value="" name="filename" id="filename">
@@ -97,6 +98,15 @@
             </div>
 
             <div class="input-box">
+							<label for="eres">Eres:</label>
+							<select id="eres" name="eres" required>
+								<option value="" disabled selected>Elige una opción</option>
+								<option value="Sordo/a">Sordo/a</option>
+								<option value="Oyente/a">Oyente/a</option>
+							</select>
+						</div>
+
+            <div class="input-box">
               <label for="binance_de_Pay" class="form-label">Binance de Pay</label>
               <input type="text" id="binance_de_Pay" name="binance_de_Pay" class="form-control"
                 placeholder="Ingrese su número de Binance" required>
@@ -139,7 +149,7 @@
   <!-- Modal -->
   <div id="myModal" class="modal">
     <div class="modal-content">
-      <img id="facu" src="img/mut100.png" alt="">
+      <img id="facu" src="img/MultiLuisVero.png" alt="">
       <div class="live">
         <img id="Correct" src="img/aprobar.png" alt="">
 
@@ -163,7 +173,7 @@
     <p>Muito obrigado! Desejo a todos um excelente dia, cheio de energia e fluidez.
       Vamos continuar avançando juntos! 🌟 Bom dia!</p>
     <div class="modal-buttons">
-      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='index.html'">10 USD
+      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='proy.html'">10 USD
       </button>
       <button class="confirm" type="submit" id="openModalButton" onclick="document.location='about.html'">50 USD
       </button>
@@ -408,6 +418,7 @@
                     <p><strong>País:</strong> ${details.pais}</p>
                     <p><strong>Cor Responsável:</strong> ${details.colores_responsable}</p>
                     <p><strong>Pagar em dólares:</strong> ${details.pagar}</p>
+                    <p><strong>Eres de:</strong> ${details.eres}</p>
                     <p><strong>Binance de Pay:</strong> ${details.binance_de_Pay}</p>
                     <p><strong>Archivo:</strong> <a href="${details.fileUrl}" target="_blank">Ver Archivo</a></p>
                 `;
