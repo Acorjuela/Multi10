@@ -3,7 +3,7 @@ const openModalButton = document.querySelector(".apceta");
 
 // Temporizador
 const countdown = () => {
-    const launchDate = new Date("2025-03-14T23:30:00Z").getTime();
+    const launchDate = new Date("2025-03-21T23:30:00Z").getTime();
     const now = new Date().getTime();
     const timeLeft = launchDate - now;
 
