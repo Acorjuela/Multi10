@@ -575,13 +575,13 @@ a{
     transform: translate(0, -9px);
 }
 .img-one{
-    background-image: url(/img/logom10-Photoroom.png);
+    background-image: url(img/logom10-Photoroom.png);
     background-size: cover;
     width: 324px;
     height: 265px;
 }
 .img-two{
-    background-image: url(/img/PROO.png);
+    background-image: url(img/PROO.png);
     background-size: cover;
     width: 418px;
     height: 265px;
