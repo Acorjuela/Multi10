@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="icon" type="image/jpg" href="img/logom10-Photoroom.png">
+    <link rel="icon" type="image/jpg" href="img/Todos10.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <title>Multi 10</title>
+    <title>10</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,14 +15,14 @@
     <section class="slider-main">
         <div class="container">
             <div class="logo">
-                <a href="#"><img src="img/logom10-Photoroom.png" alt="logo"></a>
+                <a href="#"><img src="img/Copia de Fenix Cominidad-Photoroom.png" alt="logo"></a>
             </div>
             <div class="slider-content-wrap">
                 <div class="slider-content">
-                    <h2 class="heading-style-2">Registro para Multi 10</h2>
+                    <h2 class="heading-style-2">Registro para Multi 10 o PRO 10</h2>
                     <p>Inscreva-se antes que o tempo acabe</p>
-                    <button class="apceta" type="submit" id="openModalButton"
-                        onclick="document.location='proy.html'">Entre</button>
+                    <button class="apceta1" type="submit" id="openModalButton1"
+                        onclick="window.modal1.showModal();">Entre</button>
 
                     <!-- Cuenta regresiva -->
                     <div class="countdown">
@@ -44,7 +44,6 @@
                         </div>
                     </div>
 
-                    <h2 id="message" style="display: none;">Na próxima segunda-feira começamos a trabalhar.</h2>
 
 
                 </div>
@@ -52,9 +51,9 @@
         </div>
         </div>
         <div class="slider-images">
-            <img class="slider-image" src="img/8-Photoroom.png" alt="headphone image">
-            <img class="slider-image" src="img/7-Photoroom.png" alt="headphone image">
-            <img class="slider-image" src="img/9-Photoroom.png" alt="headphone image">
+            <img class="slider-image" src="/img/8-Photoroom.png" alt="headphone image">
+            <img class="slider-image" src="/img/7-Photoroom.png" alt="headphone image">
+            <img class="slider-image" src="/img/9-Photoroom.png" alt="headphone image">
         </div>
         <div id="backgrounds">
             <div class="background"
@@ -67,8 +66,33 @@
     </section>
 
 
+    <dialog id="modal1" class="modal1">
+        <div class="wrapper">
+            <div class="services">
+                <a>
+                    <span class="single-img img-one">
+                        <span class="img-text">
+                            <button class="apceta" type="submit" id="openModalButton" onclick="window.location.href='proy.html';"
+                           >Comprar ahora</button>
+                           <h2 id="message" style="display: none; color: white;">Na próxima segunda-feira começamos a trabalhar Multi10.</h2>
+                        </span>
+                    </span>
+                </a>
+                <a >
+                    <span class="single-img img-two">
+                        <span class="img-text">
+                            <button onclick="window.location.href='Prom.html';" class="supera">Comprar ahora</button>
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <input type="button" value="Cancelar" onclick="window.location.href='index.html';">
+        </div>
+    </dialog>
+
+
 </body>
-<script src="Js/proy.js"></script>
-<script src="Js/time.js"> </script>
+<script src="/Js/proy.js"></script>
+<script src="/Js/time.js"> </script>
 
 </html>
