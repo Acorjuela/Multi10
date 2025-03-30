@@ -952,7 +952,7 @@ dialog {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
-  margin-top: auto;
+  margin-top: 11px;
   overflow: hidden;
   border: 8px solid #1bf1f8;
   border-radius: 30px;
@@ -1134,6 +1134,12 @@ input[type="button"]:enabled {
     justify-content: center;
   }
 
+  .logo #MULTI {
+    width: 188px;
+    margin-left: 21PX;
+  }
+    
+
 }
 
 /* Galaxy Z Fold 5 (pantalla externa) */
@@ -1147,6 +1153,12 @@ input[type="button"]:enabled {
   ul li {
     font-size: 1rem;
   }
+
+  .logo #MULTI {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
 }
 
 
