@@ -16,11 +16,11 @@
     <div class="container">
       <header class="hdr">
         <div class="logo">
-          <img id="loteria" src="img/logom10-Photoroom.png" alt="">
+          <img id="loteria" src="img/Captura de pantalla 2025-03-28 103229-Photoroom.png" alt="">
         </div>
 
       </header>
-      <h1 class="ml3">FORMULARIO DE REGISTRACIÓN 50 USD</h1>
+      <h1 class="ml3">FORMULARIO DE REGISTRACIÓN 20 USD</h1>
 
       <div class="content">
         <div class="subscribe">
@@ -28,7 +28,7 @@
           <button class="cancel" type="button" id="cancelBtn" onclick="document.location='index.html'">Cancelar</button>
         </div>
         <form id="uploadForm"
-          action="https://script.google.com/macros/s/AKfycbw37yD4WKoi7WPko0XitTiGTk1GB5kpG2ZWprXEPInvssC-FdpgKapyOS7HfCZJk5gf/exec"
+          action="https://script.google.com/macros/s/AKfycbycF-fyIIrpjXYj1rP8DYtUIuR38JsVQ9X6zlPqDBYnQJVSQE7_qns9yCNrvsm87Lj-fA/exec"
           method="POST" enctype="multipart/form-data">
           <input type="hidden" value="" name="fileContent" id="fileContent">
           <input type="hidden" value="" name="filename" id="filename">
@@ -40,8 +40,17 @@
                 required>
             </div>
             <div class="input-box">
-              <label for="email" class="form-label">E-mail</label>
+              <label for="nombrex2" class="form-label">Nomes x2</label>
+              <input type="text" id="nombrex2" name="nombrex2" class="form-control" placeholder="Ingrese su Nomes completo"
+                required>
+            </div>
+            <div class="input-box">
+              <label for="email" class="form-label">E-mail x1</label>
               <input type="email" id="email" name="email" class="form-control" placeholder="Ingrese su E-mail" required>
+            </div>
+            <div class="input-box">
+              <label for="emailx2" class="form-label">E-mail x2</label>
+              <input type="email" id="emailx2" name="emailx2" class="form-control" placeholder="Ingrese su E-mail" required>
             </div>
             <div class="input-box">
               <label for="fecha_nacimiento" class="form-label">Data de nascimento</label>
@@ -55,6 +64,10 @@
             <div class="input-box">
               <label for="usuario" class="form-label">Usuário</label>
               <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuário Cear " required>
+            </div>
+            <div class="input-box">
+              <label for="usuariox2" class="form-label">Usuário x2</label>
+              <input type="text" id="usuariox2" name="usuariox2" class="form-control" placeholder="Usuário Cear " required>
             </div>
             <div class="input-box">
               <label for="pais" class="form-label">País</label>
@@ -93,18 +106,18 @@
               <label for="pagar">Pagar em dólares</label>
               <select id="pagar" name="pagar" required>
                 <option value="" disabled selected>Selecione um valor</option>
-                <option value="50 USD">50 USD</option>
+                <option value="20 USD">20 USD</option>
               </select>
             </div>
 
             <div class="input-box">
-              <label for="eres">Eres:</label>
-              <select id="eres" name="eres" required>
-                <option value="" disabled selected>Elige una opción</option>
-                <option value="Sordo/a">Sordo/a</option>
-                <option value="Oyente/a">Oyente/a</option>
-              </select>
-            </div>
+							<label for="eres">Eres:</label>
+							<select id="eres" name="eres" required>
+								<option value="" disabled selected>Elige una opción</option>
+								<option value="Sordo/a">Sordo/a</option>
+								<option value="Oyente/a">Oyente/a</option>
+							</select>
+						</div>
 
             <div class="input-box">
               <label for="binance_de_Pay" class="form-label">Binance de Pay</label>
@@ -149,7 +162,7 @@
   <!-- Modal -->
   <div id="myModal" class="modal">
     <div class="modal-content">
-      <img id="facu" src="img/MultiLuisVero.png" alt="">
+      <img id="facu" src="img/PROYMULITF.png" alt="">
       <div class="live">
         <img id="Correct" src="img/aprobar.png" alt="">
 
@@ -160,31 +173,36 @@
   </div>
 
   <dialog id="modal1" class="modal1">
-    <h3>¡Regras dos Administradores do Grupo!</h3>
-    <p> Se você tem uma captura de tela do Binance Pay ao iniciar:</p>
-    <ul>
-      <li>1. Comunicação clara e respeitosa.</li>
-      <li>2. Respeito pelos outros.</li>
-      <li>3. Proibido insultar ou ofender.</li>
-      <li>4. Feedback construtivo.</li>
-      <li>5. Ajuda no processo para obter uma captura de tela do Binance Pay.</li>
-    </ul>
-    <h3>Notas:</h3>
-    <p>Muito obrigado! Desejo a todos um excelente dia, cheio de energia e fluidez.
-      Vamos continuar avançando juntos! 🌟 Bom dia!</p>
-    <div class="modal-buttons">
-      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='proy.html'">10 USD
-      </button>
-      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='about.html'">50 USD
-      </button>
-      <button class="confirm" type="submit" id="openModalButton" onclick="document.location='main.html'">100 USD
-      </button>
-      <button class="cancel" type="button" id="cancelBtn" onclick="document.location='about.html'">Cancelar</button>
-    </div>
-    </form>
-  </dialog>
-
-
+		<div class="modal-buttons">
+			<div >
+				<div class="logo">
+					<h1>A</h1>
+					<img id="MULTI" src="img/AMULIT-Photoroom.png" alt="">
+				</div>
+			</div>
+			<button class="confirm" type="submit" id="openModalButton" onclick="document.location='proy.html'">10 USD
+			</button>
+			<div >
+				<div class="logo">
+					<h1>B</h1>
+					<img id="MULTI" src="img/BMULIT-Photoroom.png" alt="">
+				</div>
+			</div>
+			<button class="confirm" type="submit" id="openModalButton" onclick="document.location='about.html'">20 USD
+			</button>
+			<div >
+				<div class="logo">
+					<h1>C</h1>
+					<img id="MULTI" src="img/CMULIT-Photoroom.png" alt="">
+				</div>
+			</div>
+			<button class="confirm" type="submit" id="openModalButton" onclick="document.location='main.html'">30 USD
+			</button>
+			<button class="cancel" type="button" id="cancelBtn"
+				onclick="document.location='proy.html'">Cancelar</button>
+		</div>
+		</form>
+	</dialog>
 
   <!-- From Uiverse.io by 00Kubi -->
   <div class="socket">
@@ -411,10 +429,13 @@
               const modalMessage = `
                     <h2>${data.message}</h2>
                     <p><strong>Nomes:</strong> ${details.nombre}</p>
-					<p><strong>E-mail:</strong> ${details.email}</p>
-					<p><strong>Data de nascimento:</strong> ${details.fecha_nacimiento}</p>
-					<p><strong>WhatsApp:</strong> ${details.whatsApp}</p>
-					<p><strong>Usuário:</strong> ${details.usuario}</p>
+                    <p><strong>Nomes:</strong> ${details.nombrex2}</p>
+					          <p><strong>E-mail:</strong> ${details.email}</p>
+					          <p><strong>E-mail:</strong> ${details.emailx2}</p>
+					          <p><strong>Data de nascimento:</strong> ${details.fecha_nacimiento}</p>
+					          <p><strong>WhatsApp:</strong> ${details.whatsApp}</p>
+					          <p><strong>Usuário:</strong> ${details.usuario}</p>
+					          <p><strong>Usuário:</strong> ${details.usuariox2}</p>
                     <p><strong>País:</strong> ${details.pais}</p>
                     <p><strong>Cor Responsável:</strong> ${details.colores_responsable}</p>
                     <p><strong>Pagar em dólares:</strong> ${details.pagar}</p>
@@ -445,7 +466,6 @@
       document.getElementById("uploadForm").reset(); // Reiniciar el formulario
       document.getElementById("imagePreview").style.display = "none"; // Asegurarse de que la imagen no esté visible
       document.getElementById("submitButton").disabled = true; // Deshabilitar el botón
-	window.location.href = "index.html"; // Redirige a index.html
     }
 
     // Cerrar el modal si se hace clic fuera de él
