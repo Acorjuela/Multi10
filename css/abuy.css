@@ -957,7 +957,7 @@ dialog {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
-  margin-top: auto;
+  margin-top: 11px;
   overflow: hidden;
   border: 8px solid #28e457;
   border-radius: 30px;
@@ -1137,6 +1137,11 @@ input[type="button"]:enabled {
     display: flex;
     justify-content: center;
   }
+
+  .logo #MULTI {
+    width: 188px;
+    margin-left: 21PX;
+  }
   
 
 }
@@ -1151,6 +1156,11 @@ input[type="button"]:enabled {
   h3,
   ul li {
     font-size: 1rem;
+  }
+
+  .logo #MULTI {
+    margin-right: 0;
+    margin-left: 0;
   }
 
   
