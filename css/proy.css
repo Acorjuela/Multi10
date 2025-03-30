@@ -107,6 +107,15 @@ i {
   margin-right: auto;
 }
 
+.logo #MULTI {
+  width: 188px;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  margin-left: 109PX;
+  margin-right: auto;
+}
+
 .live #Correct {
   width: 171px;
   height: auto;
